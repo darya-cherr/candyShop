@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 const Signup = () => {
-    const paperStyle = { padding: 20, width: 450, margin: "0 auto" }
+    const paperStyle = { padding: 40, width: 410, margin: " auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const marginTop = { marginTop: 5 }
@@ -17,27 +17,27 @@ const Signup = () => {
                 <Grid align='center'>
                     <Avatar style={avatarStyle}>
                     </Avatar>
-                    <h2 style={headerStyle}>Sign Up</h2>
-                    <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
+                    <h2 style={headerStyle}>Регистрация</h2>
+                    <Typography variant='caption' gutterBottom>Пожалуйста, заполните все поля для регистрации</Typography>
                 </Grid>
                 <form>
-                    <TextField fullWidth label='Name' placeholder="Enter your name" />
-                    <TextField fullWidth label='Email' placeholder="Enter your email" />
+                    <TextField fullWidth label='Имя' placeholder="Введите имя" />
+                    <TextField fullWidth label='Email' placeholder="Введите email" />
                     <FormControl component="fieldset" style={marginTop}>
-                        <FormLabel component="legend">Gender</FormLabel>
+                        <FormLabel component="legend">Пол</FormLabel>
                         <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
-                            <FormControlLabel value="female" control={<Radio />} label="Female" />
-                            <FormControlLabel value="male" control={<Radio />} label="Male" />
+                            <FormControlLabel value="female" control={<Radio />} label="Женский" />
+                            <FormControlLabel value="male" control={<Radio />} label="Мужской" />
                         </RadioGroup>
                     </FormControl>
-                    <TextField fullWidth label='Phone Number' placeholder="Enter your phone number" />
-                    <TextField fullWidth label='Password' placeholder="Enter your password"/>
-                    <TextField fullWidth label='Confirm Password' placeholder="Confirm your password"/>
+                    <TextField fullWidth label='Номер телефона' placeholder="Введите номер телефона" />
+                    <TextField fullWidth label='Пароль' placeholder="Введите пароль"/>
+                    <TextField fullWidth label='Повторите пароль' placeholder="Повторите пароль"/>
                     <FormControlLabel
                         control={<Checkbox name="checkedA" />}
-                        label="I accept the terms and conditions."
+                        label="Я принимаю условия пользовательского соглашения."
                     />
-                    <Button type='submit' variant='contained' color='primary'>Sign up</Button>
+                    <Button type='submit' variant='contained' color='primary'>Регистрация</Button>
                 </form>
             </Paper>
         </Grid>
