@@ -12,21 +12,24 @@ const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const paperStyle={width:490, margin:"40px auto"}
+  const paperStyle={width:966,margin:"40px auto"}
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
     return (
+      
       <div
+      
         role="tabpanel"
         hidden={value !== index}
         id={`simple-tabpanel-${index}`}
         aria-labelledby={`simple-tab-${index}`}
         {...other}
       >
+        
         {value === index && (
           <Box>
-            <Typography>{children}</Typography>
+            <Typography >{children}</Typography>
           </Box>
         )}
       </div>
@@ -41,11 +44,16 @@ const handleChange = (event, newValue) => {
           textColor="primary"
           onChange={handleChange}
           aria-label="disabled tabs example"
+          align ='right'
         >
+          
           <Tab label="Sign In" />
          
           <Tab label="Sign Up" />
         </Tabs>
+       <div align='left'>
+               <img src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>
+               </div>
         <TabPanel value={value} index={0}>
        <Login handleChange={handleChange}/>
       </TabPanel>

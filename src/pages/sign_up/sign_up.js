@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 const Signup = () => {
-    const paperStyle = { padding: 40, width: 410, margin: " auto" }
+    const paperStyle = { padding:20,  width:450, margin:"-715px -200px -600px 475px",height:670}
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const marginTop = { marginTop: 5 }
