@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import logo from './logo.png';
-import {Button, Figure, Nav, Navbar, NavLink} from "react-bootstrap";
+import {Button, Nav, Navbar} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"
 import {Link} from "react-router-dom";
 
@@ -18,17 +18,13 @@ function Header(){
                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                <Navbar.Collapse id="responsive-navbar-nav" className="mx-auto">
                    <Nav className="mx-auto">
-                        <Nav.Link className="me-5"> HOME</Nav.Link>
-                        <Nav.Link className="me-5"> ABOUT US</Nav.Link>
-                        <Nav.Link className="me-5"> PRODUCTS</Nav.Link>
-                        <Nav.Link className="me-5"> CONTACTS</Nav.Link>
-                       {/*<Nav.Link className="me-5"><Link to="/"> HOME</Link></Nav.Link>
+                       <Nav.Link className="me-5"><Link to="/"> HOME</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/about"> ABOUT US</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/products"> PRODUCTS</Link></Nav.Link>
-                       <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>*/}
+                       <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
                    </Nav>
                    <Nav className="me-5">
-                       <Button variant="danger" className="me-5">Log In</Button>
+                       <Button variant="danger" className="me-5"><Link to="/authorization">Log In</Link></Button>
                    </Nav>
                </Navbar.Collapse>
            </Navbar>
