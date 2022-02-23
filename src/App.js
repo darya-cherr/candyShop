@@ -1,9 +1,14 @@
 import './App.css';
+import Header from "./Components/Header";
+import "bootstrap/dist/css/bootstrap.min.css"
 
-function App() {
+
+
+const App = () => {
   return (
     <div>
-      <div>FirstCommit</div>
+        <Header />
+
     </div>
   );
 }
