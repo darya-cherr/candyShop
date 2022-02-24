@@ -48,7 +48,6 @@ const handleChange = (event, newValue) => {
             <Tab label="Sign in"  />
          
           <Tab label="Sign up" />
-            <Tab label="Sign up" />
         </Tabs>
        <div align='left'>
                <img src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>
