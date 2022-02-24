@@ -5,16 +5,22 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import {Link} from "react-router-dom";
 import styled from "styled-components"
 
+
 const Styles = styled.div `
   a, .navbar-nav, .nav-link 
   { color: #000000;
-    font-size: 105%;
+    font-size: 110%;
     text-decoration: none;
     font-weight: normal;
+    font-family: Candara;
     &:hover {
       font-weight: bold;
     }
-  }`
+  }
+  .button{
+    color: white;
+  }
+`
 
 
 function Header(){
@@ -30,15 +36,15 @@ function Header(){
                     />
                </Navbar.Brand>
                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
-               <Navbar.Collapse id="responsive-navbar-nav" className="mx-auto">
-                   <Nav className="mx-auto">
+               <Navbar.Collapse id="responsive-navbar-nav" className="mx-auto ms-5">
+                   <Nav className="mx-auto ">
                        <Nav.Link className="me-5"><Link to="/"> HOME</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/about"> ABOUT US</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/products"> PRODUCTS</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
                    </Nav>
                    <Nav className="me-5">
-                       <Button variant="danger" className="me-5"><Link to="/authorization">Log In</Link></Button>
+                       <Button variant="danger" className="me-5"><Link to="/authorization" className="button">Log In</Link></Button>
                    </Nav>
                </Navbar.Collapse>
                </Container>
@@ -53,10 +59,10 @@ const ColoredLine = ({ color }) => (
      style={{
         color: '#000000',
         backgroundColor: '#000000',
-        height: .7,
+        height: 2,
         borderColor : '#000000',
         marginTop: 0,
-
+        marginBottom: 0,
     }}
     />
 );
