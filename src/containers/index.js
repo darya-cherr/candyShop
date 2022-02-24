@@ -12,7 +12,7 @@ const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const paperStyle={width:966,margin:"40px auto"}
+  const paperStyle={width:925,margin:"40px auto"}
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -47,9 +47,9 @@ const handleChange = (event, newValue) => {
           align ='right'
         >
           
-          <Tab label="Sign In" />
+          <Tab label="Вход" />
          
-          <Tab label="Sign Up" />
+          <Tab label="Регистрация" />
         </Tabs>
        <div align='left'>
                <img src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>

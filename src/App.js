@@ -1,7 +1,7 @@
 import './App.css';
 import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css"
-import SignInOutContainer from "./containers";
+import SignInOutContainer from "./containers/index";
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Products from "./pages/Products"
@@ -16,7 +16,7 @@ import {
 
 function App(){
   return (
-    <>
+
         <Router>
             <Header />
         <Routes>
@@ -27,8 +27,13 @@ function App(){
             <Route path="/authorization" element={<SignInOutContainer/>}/>
         </Routes>
         </Router>
-    </>
+   /*
+<div>
+           <SignInOutContainer/>
+</div>*/
   );
+  
 }
+
 
 export default App;
