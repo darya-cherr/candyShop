@@ -12,7 +12,7 @@ const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const paperStyle={width:925,margin:"auto"}
+  const paperStyle={width:925,margin:"20px auto"}
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -45,7 +45,7 @@ const handleChange = (event, newValue) => {
           aria-label="disabled tabs example"
         >
 
-            <Tab label="Sign in"  />
+            <Tab  label="Sign in"  />
          
           <Tab label="Sign up" />
         </Tabs>
