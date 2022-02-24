@@ -15,29 +15,31 @@ const Signup = () => {
         <Grid>
             <Paper style={paperStyle}>
                 <Grid align='center'>
-                    <Avatar style={avatarStyle}>
-                    </Avatar>
-                    <h2 style={headerStyle}>Регистрация</h2>
-                    <Typography variant='caption' gutterBottom>Пожалуйста, заполните все поля для регистрации</Typography>
+                    <h2 style={headerStyle}>Sign up</h2>
+                    <Typography variant='caption' gutterBottom>For registration it is necessary to fill in all the fields</Typography>
                 </Grid>
                 <form align ='center'>
-                    <TextField fullWidth label='Имя' placeholder="Введите имя" />
-                    <TextField fullWidth label='Email' placeholder="Введите email" />
+                    <TextField fullWidth label='Name' placeholder="Enter name" />
+                    <TextField fullWidth label='Email' placeholder="Enter email" />
                     <FormControl component="fieldset" style={marginTop}>
-                        <FormLabel component="legend">Пол</FormLabel>
+                        <FormLabel component="legend">Gender</FormLabel>
                         <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
-                            <FormControlLabel value="female" control={<Radio />} label="Женский" />
-                            <FormControlLabel value="male" control={<Radio />} label="Мужской" />
+                            <FormControlLabel value="female" control={<Radio />} label="Female" />
+                            <FormControlLabel value="male" control={<Radio />} label="Male" />
                         </RadioGroup>
                     </FormControl>
-                    <TextField fullWidth label='Номер телефона' placeholder="Введите номер телефона" />
-                    <TextField fullWidth label='Пароль' placeholder="Введите пароль"/>
-                    <TextField fullWidth label='Повторите пароль' placeholder="Повторите пароль"/>
+                    <TextField fullWidth label='Phone number' placeholder="Enter phone number" />
+                    <TextField fullWidth label='Password' placeholder="Enter password"/>
+                    <TextField fullWidth label='Confirm password' placeholder="Confirm password"/>
+                    <br />
+                    <br />
                     <FormControlLabel  align ='left'
+
                         control={<Checkbox name="checkedA" />}
-                        label="Я принимаю условия пользовательского соглашения."
-                    />
-                    <Button  type='submit' variant='contained' color='primary' >Регистрация</Button>
+
+                        label="I accept the terms of the user agreement."
+                    /><br /><br />
+                    <Button  type='submit' variant='contained' color='primary' >Sign up</Button>
                 </form>
             </Paper>
         </Grid>

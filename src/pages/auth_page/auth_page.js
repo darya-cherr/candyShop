@@ -11,12 +11,10 @@ const Login =()=>{
         <Grid  >
             <Paper  style = {paperStyle}>
                <Grid align = 'center'>
-                  
-               <Avatar>H</Avatar>
-                <h2>Вход</h2></Grid>
+                <h2>Sign in</h2></Grid>
                 <form align ='center'>
-                <TextField  label="Логин" placeholder ="Введите логин" fullWidth required />
-                <TextField label="Пароль" placeholder ="Введите пароль" type = 'password' fullWidth required />
+                <TextField  label="Login" placeholder ="Enter login" fullWidth required />
+                <TextField label="Password" placeholder ="Enter password" type = 'password' fullWidth required />
                 <FormControlLabel
                     control={
                     <Checkbox
@@ -24,17 +22,17 @@ const Login =()=>{
                         color="primary"
                     />
                     }
-                    label ="Запомнить"
-                 />  
+                    label ="Remember"
+                 />
                  <br />
-                 <Button  type='submit' color='primary' variant="contained" style={btnstyle} fullWidth >Войти</Button>
-                <Typography >
+                 <Button  type='submit' color='primary' variant="contained" style={btnstyle} fullWidth >Sign in</Button>
+                <Typography ><br />
                      <Link href="#" >
-                        Забыли пароль?
+                         Forgot password?
                 </Link>
                 </Typography>
                      <Link href="#"  >
-                        Регистрация
+                        Sign up
                 </Link>
                     </form>
             </Paper>
