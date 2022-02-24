@@ -14,9 +14,7 @@ import {
 } from "react-router-dom";
 
 
-
 function App(){
-
   return (
     <>
         <Router>
@@ -29,9 +27,6 @@ function App(){
             <Route path="/authorization" element={<SignInOutContainer/>}/>
         </Routes>
         </Router>
-        {/*<div className="App">
-            <SignInOutContainer/>
-        </div>*/}
     </>
   );
 }
