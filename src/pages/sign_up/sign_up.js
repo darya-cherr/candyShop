@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 const Signup = () => {
-    const paperStyle = { padding:20,  width:450, margin:"-715px -200px -600px 475px",height:670}
+    const paperStyle = { padding:20,  width:450, margin:"-712px -200px -600px 475px",height:710}
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const marginTop = { marginTop: 5 }
@@ -20,7 +20,7 @@ const Signup = () => {
                     <h2 style={headerStyle}>Регистрация</h2>
                     <Typography variant='caption' gutterBottom>Пожалуйста, заполните все поля для регистрации</Typography>
                 </Grid>
-                <form>
+                <form align ='center'>
                     <TextField fullWidth label='Имя' placeholder="Введите имя" />
                     <TextField fullWidth label='Email' placeholder="Введите email" />
                     <FormControl component="fieldset" style={marginTop}>
@@ -33,11 +33,11 @@ const Signup = () => {
                     <TextField fullWidth label='Номер телефона' placeholder="Введите номер телефона" />
                     <TextField fullWidth label='Пароль' placeholder="Введите пароль"/>
                     <TextField fullWidth label='Повторите пароль' placeholder="Повторите пароль"/>
-                    <FormControlLabel
+                    <FormControlLabel  align ='left'
                         control={<Checkbox name="checkedA" />}
                         label="Я принимаю условия пользовательского соглашения."
                     />
-                    <Button type='submit' variant='contained' color='primary'>Регистрация</Button>
+                    <Button  type='submit' variant='contained' color='primary' >Регистрация</Button>
                 </form>
             </Paper>
         </Grid>

@@ -1,7 +1,7 @@
 import './App.css';
 import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css"
-import SignInOutContainer from "./containers";
+import SignInOutContainer from "./containers/";
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Products from "./pages/Products"
