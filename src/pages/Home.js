@@ -14,7 +14,8 @@ const Styles = styled.div `
     margin-top: 10%;
     backdrop-filter: brightness(70%);
     padding-bottom: 50px;
-    z-index: 1;
+   
+    
   }
 
   .shadow1 {
@@ -30,8 +31,8 @@ const Styles = styled.div `
   }
   
   .image {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: -1;
   }
 
   .holder {
@@ -41,10 +42,9 @@ const Styles = styled.div `
     font-family: "Cambria";
   }
   
-  .text-holder{
-    position: relative;
-    height: auto;
-    
+  .holder2{
+   position: relative;
+    padding-bottom: 80px;
   }
 
   .header-text {
@@ -57,17 +57,12 @@ const Styles = styled.div `
   }
   
   .cont1{
-    position: static;
-    height: 1100px;
+    position: relative;
+    padding-bottom: 1100px;
   }
   
-  .cont2{
-    position: absolute;
-    
-  }
 
   .flower1 {
-    object-fit: cover;
     position: absolute;
     margin-left: 75px;
     margin-top: 80px;
@@ -81,17 +76,21 @@ const Home =() =>{
         <Styles>
 
             <HomeImgComponent />
-            <TextBlock/>
-            <Slider/>
+            <TextBlock1/>
+            <div className="position-relative">
+                <Slider/>
+            </div>
+            <Container className="mt-5"></Container>
+
         </Styles>
 
     );
 }
 
-const TextBlock = () => {
+const TextBlock1 = () => {
   return(
-      <div className="text-holder">
-          <Container className="shadow2" >
+      <div className="holder2" >
+          <Container >
               <h1 className="holder">HAVING A PARTY?</h1>
               <p className="header-text mx-5">Candy is made by dissolving
                   sugar in water or milk to form a syrup, which is boiled until it reaches
@@ -99,21 +98,35 @@ const TextBlock = () => {
                   from soft and chewy to hard and brittle. The texture of candy depends on the ingredients.</p>
           </Container>
       </div>
+
   );
+}
+
+const TextBlock2 = () => {
+    return(
+        <div className="holder2" >
+            <Container >
+                <h1 className="holder">HAVING A PARTY?</h1>
+                <p className="header-text mx-5">Candy is made by dissolving
+                    sugar in water or milk to form a syrup, which is boiled until it reaches
+                    the desired concentration or starts to caramelize. Candy comes in a wide variety of textures,
+                    from soft and chewy to hard and brittle. The texture of candy depends on the ingredients.</p>
+            </Container>
+        </div>
+
+    );
 }
 
 const HomeImgComponent = () => {
     return (
-    <div className="cont1 d-block">
-        <div className="img-fluid cont2">
-            <img src={HomeHeaderCake} className="img-fluid shadow1 image"/>
-        </div>
+    <Container className="cont1 mw-100 px-0">
+            <img src={HomeHeaderCake} className="w-100 shadow1 image d-block" />
+            <img src={Flower1} className="flower1 "/>
         <Container className="cont shadow1">
             <h1 className="holder">WELCOME TO OUR BAKERY!</h1>
             <p className="header-text">We make your life sweeter</p>
         </Container>
-        <img src={Flower1} className="img-fluid flower1"/>
-    </div>
+    </Container>
     );
 }
 
