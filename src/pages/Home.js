@@ -10,12 +10,8 @@ const Styles = styled.div `
     position: absolute;
     left: 60%;
     width: 33%;
+    top: 20%;
     height: auto;
-    margin-top: 10%;
-    backdrop-filter: brightness(70%);
-    padding-bottom: 50px;
-   
-    
   }
 
   .shadow1 {
@@ -31,7 +27,6 @@ const Styles = styled.div `
   }
   
   .image {
-    position: absolute;
     z-index: -1;
   }
 
@@ -43,8 +38,12 @@ const Styles = styled.div `
   }
   
   .holder2{
-   position: relative;
-    padding-bottom: 80px;
+    position: relative;
+    top: 80px;
+    width: 100%;
+    padding-bottom: 150px;
+    text-align: center;
+    z-index: 1;
   }
 
   .header-text {
@@ -54,19 +53,22 @@ const Styles = styled.div `
     text-align: center;
     font-family: "Cambria";
     font-size: x-large;
+    size: auto;
   }
   
   .cont1{
     position: relative;
-    padding-bottom: 1100px;
+    height: auto;
+    z-index: -2;
   }
   
 
   .flower1 {
     position: absolute;
+    top: 80px;
     margin-left: 75px;
-    margin-top: 80px;
-    z-index: 2;
+    height: 120%;
+    width: auto;
   }
 `
 
@@ -74,14 +76,13 @@ const Styles = styled.div `
 const Home =() =>{
     return (
         <Styles>
-
-            <HomeImgComponent />
-            <TextBlock1/>
-            <div className="position-relative">
+            <div className="">
+                <HomeImgComponent />
+                <TextBlock1/>
                 <Slider/>
-            </div>
-            <Container className="mt-5"></Container>
 
+            <Container className="mt-5"></Container>
+       </div>
         </Styles>
 
     );
@@ -104,7 +105,7 @@ const TextBlock1 = () => {
 
 const TextBlock2 = () => {
     return(
-        <div className="holder2" >
+        <div className="holder2 d-block text-wrap" >
             <Container >
                 <h1 className="holder">HAVING A PARTY?</h1>
                 <p className="header-text mx-5">Candy is made by dissolving
@@ -119,7 +120,7 @@ const TextBlock2 = () => {
 
 const HomeImgComponent = () => {
     return (
-    <Container className="cont1 mw-100 px-0">
+    <Container className="cont1 mw-100 px-0 d-block">
             <img src={HomeHeaderCake} className="w-100 shadow1 image d-block" />
             <img src={Flower1} className="flower1 "/>
         <Container className="cont shadow1">
