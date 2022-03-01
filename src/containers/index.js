@@ -12,7 +12,7 @@ const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const paperStyle={width:925,margin:"20px auto"}
+  const paperStyle={width:924,margin:"20px auto"}
   function TabPanel(props) {
     const { children, value, index, ...other } = props;
   
@@ -37,17 +37,15 @@ const handleChange = (event, newValue) => {
   
     return (
         <Paper elevation={20} style={paperStyle} >
-        <Tabs
+        <Tabs align = 'center'
           value={value}
           indicatorColor="primary"
           textColor="primary"
           onChange={handleChange}
-          aria-label="disabled tabs example"
         >
-
-            <Tab  label="Sign in"  />
+            <Tab  label="Sign in" />
          
-          <Tab label="Sign up" />
+          <Tab label="Sign up"/>
         </Tabs>
        <div align='left'>
                <img src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>
