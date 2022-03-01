@@ -20,6 +20,10 @@ const Styles = styled.div `
   .button{
     color: white;
   }
+
+  .shadow1 {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
 `
 
 
@@ -27,7 +31,7 @@ function Header(){
     return (
        <>
           <Styles>
-           <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+           <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="shadow1">
                <Container>
                <Navbar.Brand  className="mx-5">
                     <img src={logo}
