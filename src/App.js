@@ -1,12 +1,12 @@
-import Header from "./Components/Header";
+import Header from "./client/Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css"
-import SignInOutContainer from "./containers/index";
+import SignInOutContainer from "./client/containers";
 
-import Contain from "./containers/container";
-import Home from "./pages/Home"
-import About from "./pages/About"
-import Products from "./pages/Products"
-import Contacts from "./pages/Contacts"
+import Contain from "./client/containers/container";
+import Home from "./client/pages/Home"
+import About from "./client/pages/About"
+import Products from "./client/pages/Products"
+import Contacts from "./client/pages/Contacts"
 import {
     BrowserRouter as Router,
     Routes,
