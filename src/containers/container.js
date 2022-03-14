@@ -14,9 +14,9 @@ const Contain =()=>{
                       opacity: [0.9, 0.8, 0.7],
                   },
               }}>
-            <img align={'left'} src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>
+            <img align={'left'}  src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>
 
-            <SignInOutContainer />
+            <SignInOutContainer  />
 
 
 

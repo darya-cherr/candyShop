@@ -1,4 +1,3 @@
-import './App.css';
 import Header from "./Components/Header";
 import "bootstrap/dist/css/bootstrap.min.css"
 import SignInOutContainer from "./containers/index";
@@ -25,7 +24,7 @@ function App(){
             <Route path="/about" element={<About/>}/>
             <Route path="/products" element={<Products/>}/>
             <Route path="/contacts" element={<Contacts/>}/>
-            <Route path="/authorization" element={<Contain/>}/>
+            <Route path="/authorization" element={<Contain/> } />
         </Routes>
         </Router>
     </>

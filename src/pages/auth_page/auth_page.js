@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import {Grid, Paper,  TextField, Button, Typography,Link} from '@material-ui/core'
 const Login =({handleChange})=>{
     const paperStyle={padding :20,height:'75.2vh',width:340, margin:"0 auto"}
-    const avatarStyle={backgroundColor:'#1bbd7e'}
+
     const btnstyle={margin:'8px 0'}
     return(
         <Grid>
