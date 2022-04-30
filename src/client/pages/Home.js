@@ -10,7 +10,7 @@ const Styles = styled.div `
     position: absolute;
     left: 60%;
     width: 33%;
-    top: 13%;
+    top: 20%;
     height: auto;
   }
 
@@ -41,7 +41,6 @@ const Styles = styled.div `
     position: relative;
     top: 80px;
     width: 100%;
-    height: auto;
     padding-bottom: 150px;
     text-align: center;
     z-index: 1;
