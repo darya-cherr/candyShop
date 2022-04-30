@@ -1,5 +1,6 @@
 import './App.css';
 import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css"
 import SignInOutContainer from "./containers";
 import Home from "./pages/Home"
@@ -25,6 +26,7 @@ function App(){
             <Route path="/contacts" element={<Contacts/>}/>
             <Route path="/authorization" element={<SignInOutContainer/>}/>
         </Routes>
+            <Footer />
         </Router>
     </>
   );
