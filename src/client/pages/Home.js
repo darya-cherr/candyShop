@@ -1,9 +1,9 @@
 import React from 'react';
-import HomeHeaderCake from "./../Components/cake7.jpg"
-import Flower1 from "./../Components/flower2.png"
+import HomeHeaderCake from "../Components/cake7.jpg"
+import Flower1 from "../Components/flower2.png"
 import styled from "styled-components"
 import {Container} from "react-bootstrap";
-import Slider from "./../Components/Slider"
+import Slider from "../Components/Slider"
 
 const Styles = styled.div `
   .cont {
