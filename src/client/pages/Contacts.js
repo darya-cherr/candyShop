@@ -1,6 +1,8 @@
 import React from 'react';
 
 import styled from "styled-components"
+import {Map} from './Map';
+import {useJsApiLoader} from "@react-google-maps/api";
 
 const st=styled.div`
     .map {
@@ -18,18 +20,22 @@ const st=styled.div`
 }`
 const  API_KEY= process.env["REACT_APP_API_KEY "]
 console.log(API_KEY);
-
+const defaultCenter = {
+    lat: -3.745,
+    lng: -38.523
+};
 const Contacts =() =>{
-
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "API_KEY"
+    })
   return (
 
-      <st>
+      <div className="Contacts">{isLoaded ?
+          <Map center={defaultCenter}/>:<h2>Not avalible</h2>}
+      </div>
 
-      <div id="map-test" className="map">
-      <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU">
-      </script>
-      <script src="map/script.js"></script></div>
-          </st>
+
     );
 }
 
