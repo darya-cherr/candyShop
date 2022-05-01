@@ -4,6 +4,7 @@ import {Button, Nav, Navbar, Container} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"
 import {Link} from "react-router-dom";
 import styled from "styled-components"
+import Glide from "@glidejs/glide";
 
 
 const Styles = styled.div `
@@ -70,5 +71,6 @@ const ColoredLine = ({ color }) => (
     }}
     />
 );
+
 
 export default Header;
