@@ -110,7 +110,7 @@ function Footer() {
         <>
 
             <Styles>
-                <ColoredLine color="black" />
+
                 <footer className={"footer"}>
                     <div className={"container"}>
                         <div className={"row"}>

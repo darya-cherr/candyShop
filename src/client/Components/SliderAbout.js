@@ -58,6 +58,10 @@ export default class SimpleSlider extends Component {
     render() {
 
         const settings = {
+            className: "center",
+            centerMode: true,
+            infinite: true,
+            centerPadding: "60px",
             dots: true,
             inherit: true,
             slidesToShow: 3,

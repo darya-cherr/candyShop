@@ -17,39 +17,43 @@ import SliderAbout from './../Components/SliderAbout'
 const Styles = styled.div `
 
 
-  .container {
-
-    margin-bottom: 100px;
+  .container1 {
     z-index: 5;
     position: relative;
-    margin-top: 100px;
-
+    height: max-content;
+    padding-bottom: 100px;
   }
 
   .headerImage {
-
     backdrop-filter: blur(100px);
     width: 100%;
+    background: rgba(239, 239, 239, 0.65);
+    position: absolute;
+    z-index: -2;
     height: fit-content;
-    background-blend-mode: luminosity;
-    background-size: cover;
-    position: relative;
-    z-index: -1;
+
   }
 
   .image1 {
     width: 100%;
-    filter: blur(1px);
+    filter: blur(6px);
+    height: fit-content;
+    position: relative;
+    
   }
 
-  .holder {
+  .holder1 {
+    width: 100%;
     position: relative;
-    height: auto;
+    height: fit-content;
+    background: rgba(239, 239, 239, 0.65);
+    filter: brightness(60%);
   }
 
   .shadow1 {
     background: rgba(239, 239, 239, 0.3);
     box-shadow: 0 0 20px rgba(14, 13, 13, 0.73);
+    
   }
 
   .shadow3 {
@@ -64,13 +68,14 @@ const About =() =>{
     return (
         <>
             <Styles>
-                <div className={"holder shadow1"}>
-                <div className={" headerImage "}>
-                    <img src={HeadCake} className={"image1 "}/>
+                <div className={"container1"}>
+                <div className={"holder1"}>
+                <div className={"headerImage"}>
+                    <img src={HeadCake} className={"image1"}/>
                 </div>
                 </div>
-                <div className={"container shadow3"}>
-                    <SliderAbout/>
+                <SliderAbout/>
+
                 </div>
 
             </Styles>
