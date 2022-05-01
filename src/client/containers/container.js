@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 import SignInOutContainer from "./index";
 const Contain =()=>{
     return(
-        <Box  className='m-5' align={'center'}
+        <div  className='m-5'
               sx={{
                   width: 1280,
                   height: 300,
@@ -14,13 +14,10 @@ const Contain =()=>{
                       opacity: [0.9, 0.8, 0.7],
                   },
               }}>
-            <img align={'left'}  src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg"/>
+            <img  src = "https://i.pinimg.com/564x/57/1a/b7/571ab72772aaa93ef250baa1f6b0a143.jpg" hspace={'270px'}/>
 
-            <SignInOutContainer  />
-
-
-
-</Box>
+            <SignInOutContainer />
+</div>
     )
 }
 

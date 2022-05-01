@@ -2,7 +2,7 @@
 import Header from "./client/Components/Header";
 import Footer from "./client/Components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css"
-import SignInOutContainer from "./client/containers";
+import SignInOutContainer from "./client/containers/container";
 import Home from "./client/pages/Home"
 import About from "./client/pages/About"
 import Products from "./client/pages/Products"
