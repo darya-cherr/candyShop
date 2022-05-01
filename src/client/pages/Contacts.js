@@ -27,7 +27,7 @@ const defaultCenter = {
 const Contacts =() =>{
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "API_KEY"
+        googleMapsApiKey: API_KEY
     })
   return (
 
