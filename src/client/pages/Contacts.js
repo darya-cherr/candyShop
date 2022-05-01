@@ -18,16 +18,20 @@ const st=styled.div`
 [class*="ground-pane"] {
     filter: grayscale(1);
 }`
-const  API_KEY= process.env["REACT_APP_API_KEY "]
+const  API_KEY= process.env["REACT_APP_API_KEY"]
 console.log(API_KEY);
 const defaultCenter = {
     lat: -3.745,
     lng: -38.523
 };
+const libraries = ['places']
+
+
 const Contacts =() =>{
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: API_KEY
+        googleMapsApiKey: API_KEY,
+        libraries
     })
   return (
 

@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import {GoogleMap} from "@react-google-maps/api";
 import s from './module.css'
 
@@ -7,7 +7,6 @@ const containerStyle = {
     width: '400px',
     height: '400px'
 };
-
 
 
 
