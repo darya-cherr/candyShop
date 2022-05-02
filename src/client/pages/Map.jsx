@@ -1,10 +1,12 @@
 import React from "react";
 import {GoogleMap} from "@react-google-maps/api";
 import s from './module.css'
+import button from "bootstrap/js/src/button";
 
 
 const containerStyle = {
-    width: '400px',
+    margin:'10px 100px 30px 107px',
+    width:'1304px',
     height: '400px'
 };
 
