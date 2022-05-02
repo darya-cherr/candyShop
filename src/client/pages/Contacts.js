@@ -91,7 +91,7 @@ const Styles = styled.div `
     transition: transform 0.2s linear;
   }
 
-  .button {
+  .tc {
     display: flex;
     justify-content: center;
     width: 305px;
@@ -103,27 +103,6 @@ const Styles = styled.div `
 
   .images_img img {
     transition: opacity 0.2s linear;
-  }
-
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed,
-  figure, figcaption, footer, header, hgroup,
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
   }
 
   /* Make sure to set some focus styles for accessibility */
@@ -139,9 +118,6 @@ const Styles = styled.div `
     display: block;
   }
 
-  body {
-    line-height: 1;
-  }
 
   ol, ul {
     list-style: none;
@@ -246,19 +222,7 @@ const Styles = styled.div `
     outline: 0;
   }
 
-  /**
-   * 1. Remove border when inside \`a\` element in IE 6/7/8/9 and Firefox 3.
-   * 2. Improve image quality when scaled in IE 7.
-   */
 
-  img {
-    border: 0; /* 1 */
-    -ms-interpolation-mode: bicubic; /* 2 */
-  }
-
-  /**
-   * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
-   */
 
   figure {
     margin: 0;
@@ -272,9 +236,6 @@ const Styles = styled.div `
     margin: 0;
   }
 
-  /**
-   * Define consistent border, margin, and padding.
-   */
 
   fieldset {
     border: 1px solid #c0c0c0;
@@ -487,21 +448,13 @@ const Styles = styled.div `
     box-sizing: border-box;
   }
 
-  body {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    line-height: 1.2;
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(45deg, #fff1eb, #ace0f9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 
   .container {
+
+    margin: 20px 85px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1344px;
     padding: 0 20px;
   }
 
@@ -625,7 +578,7 @@ const Styles = styled.div `
     background: rgb(0, 0, 207);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1304px) {
     .content {
       height: 100%;
       flex-direction: column-reverse;
@@ -698,22 +651,22 @@ const Contacts =() =>{
 
         <div className="images">
             <div className="address " >
-                <div className="button">
+                <div className="tc">
                     <h2 className='place'> Expobel</h2>
                 </div>
             </div>
             <div className="images_item">
-                <div className="button">
+                <div className="tc">
                     <h2 className='place'>Gallery</h2>
                 </div>
             </div>
             <div className="images_item">
-                <div className="button">
+                <div className="tc">
                     <h2 className='place'>Dana Moll</h2>
                 </div>
             </div>
             <div className="images_item">
-                <div className="button">
+                <div className="tc">
                     <h2 className='place'> Green City</h2>
                 </div>
             </div>
