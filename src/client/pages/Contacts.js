@@ -86,7 +86,7 @@ const Contacts =() =>{
 
 <div className="content">
     <Styles>
-<h1 className="title">Заведения</h1>
+<h1 className="title">Our facility</h1>
 
     <div className="images">
         <div className="images_item">
@@ -114,22 +114,22 @@ const Contacts =() =>{
         <div className="images">
             <div className="address">
                 <div className="button">
-                    <h2 className='place'> ТЦ Экспобел</h2>
+                    <h2 className='place'> Expobel</h2>
                 </div>
             </div>
             <div className="images_item">
                 <div className="button">
-                    <h2 className='place'> ТЦ Галерея</h2>
+                    <h2 className='place'>Gallery</h2>
                 </div>
             </div>
             <div className="images_item">
                 <div className="button">
-                    <h2 className='place'> ТЦ Dana Moll</h2>
+                    <h2 className='place'>Dana Moll</h2>
                 </div>
             </div>
             <div className="images_item">
                 <div className="button">
-                    <h2 className='place'> ТЦ Green City</h2>
+                    <h2 className='place'> Green City</h2>
                 </div>
             </div>
         </div>

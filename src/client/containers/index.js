@@ -12,7 +12,7 @@ const SignInOutContainer=()=>{
         setValue(newValue);
     };
 
-    const paperStyle={width:340,margin:' -712px  0 0 740px '}
+    const paperStyle={width:340,margin:' -712px  0 0 742px '}
     function TabPanel(props) {
         const { children, value, index, ...other } = props;
 
