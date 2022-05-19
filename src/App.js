@@ -12,6 +12,9 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import ProductList from "./client/pages/ProductList";
+import ProductInfo from "./client/pages/ProductInfo";
+import Cart from "./client/pages/Cart";
 
 
 function App(){
@@ -23,7 +26,10 @@ function App(){
             <Route exact path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/products" element={<ProductsPage/>}/>
+            <Route path="/product" element={<ProductInfo/>}/>
             <Route path="/contacts" element={<Contacts/>}/>
+            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/productList" element={<ProductList/>}/>
             <Route path="/authorization" element={<SignInOutContainer/>}/>
         </Routes>
             <Footer/>
