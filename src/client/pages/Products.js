@@ -1,9 +1,13 @@
 import React from 'react';
+import Categories from "./Categories";
+
 
 const Products =() =>{
 
     return (
-        <h1>Page Products</h1>
+        <>
+            <Categories/>
+        </>
     );
 }
 

@@ -104,7 +104,7 @@ const Styles = styled.div `
   }
 
   .holder3 {
-    
+    width: 100%;
   }
   
 
