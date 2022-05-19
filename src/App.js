@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import SignInOutContainer from "./client/containers/container";
 import Home from "./client/pages/Home"
 import About from "./client/pages/About"
-import Products from "./client/pages/Products"
+import ProductsPage from "./client/pages/ProductsPage"
 import Contacts from "./client/pages/Contacts"
 import {
     BrowserRouter as Router,
@@ -22,7 +22,7 @@ function App(){
         <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
-            <Route path="/products" element={<Products/>}/>
+            <Route path="/products" element={<ProductsPage/>}/>
             <Route path="/contacts" element={<Contacts/>}/>
             <Route path="/authorization" element={<SignInOutContainer/>}/>
         </Routes>
