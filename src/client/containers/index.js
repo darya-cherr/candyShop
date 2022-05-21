@@ -7,6 +7,8 @@ import Box from '@material-ui/core/Box';
 import Login from '../pages/auth_page/auth_page'
 import Signup from '../pages/sign_up/sign_up'
 const SignInOutContainer=()=>{
+
+
     const [value,setValue]=useState(0)
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -30,10 +32,12 @@ const SignInOutContainer=()=>{
                     </Box>
                 )}
             </div>
+
         );
     }
 
     return (
+
         <Paper elevation={20} style={paperStyle}>
             <Tabs
                 value={value}
@@ -53,7 +57,6 @@ const SignInOutContainer=()=>{
                 <Signup/>
             </TabPanel>
         </Paper>
-
     )
 }
 

@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import {Link} from "react-router-dom";
 import styled from "styled-components"
 import Glide from "@glidejs/glide";
+import {useDispatch, useSelector} from "react-redux";
 
 
 const Styles = styled.div `
@@ -27,8 +28,10 @@ const Styles = styled.div `
   }
 `
 
-
 function Header(){
+    const isAuth = useSelector(state => state.user.isAuth)
+    const dispatch = useDispatch()
+
     return (
        <>
           <Styles>
@@ -49,7 +52,8 @@ function Header(){
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
                    </Nav>
                    <Nav className="me-5">
-                       <Button variant="danger" className="me-5"><Link to="/authorization" className="button">Log In</Link></Button>
+                       {isAuth &&  <Button variant="danger" className="me-5"><Link to="/authorization" className="button">Log Out</Link></Button>}
+                       {!isAuth &&  <Button variant="danger" className="me-5"><Link to="/authorization" className="button">Log In</Link></Button>}
                    </Nav>
                </Navbar.Collapse>
                </Container>
