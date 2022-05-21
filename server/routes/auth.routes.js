@@ -11,11 +11,12 @@ const router = new Router()
 
 
 router.post('/registration',
-    [check('email',"Incorrect email").isEmail(),
+    [check('name',"Incorrect email"),
+        check('email',"Incorrect email").isEmail(),
+       check('gender',"Password must be longer than 3 and shorter than 12"),
         check('password',"Password must be longer than 3 and shorter than 12").isLength({min:3, max :12}),
-        check('name',"Password must be longer than 3 and shorter than 12"),
-        check('number',"Password must be longer than 3 and shorter than 12").isLength(12),
-        check('gender',"Password must be longer than 3 and shorter than 12")
+     //   check('name',"Password must be longer than 3 and shorter than 12"),
+        check('number',"Password must be 12").isLength(12)
     ],
     async (req,res) =>{
     try{

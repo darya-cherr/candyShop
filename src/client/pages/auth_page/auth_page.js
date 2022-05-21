@@ -18,7 +18,7 @@ const Login =({handleChange})=>{
         <Grid>
             <Paper  style={paperStyle}>
                 <Input value = {email}  setValue={setEmail} type="text"  placeholder='Enter username' fullWidth required/>
-                <Input label='Password'   setValue={setPassword}  placeholder='Enter password' type='password' fullWidth required/>
+                <Input value = {password}  setValue={setPassword}  placeholder='Enter password' type='password' fullWidth required/>
                 <FormControlLabel
                     control={
                         <Checkbox

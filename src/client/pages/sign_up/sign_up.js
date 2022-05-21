@@ -24,8 +24,8 @@ const Signup = () => {
             <Grid>
                 <Paper style={paperStyle}>
                     <form>
-                        <Input value = {name} setValue={setName}  fullWidth label='Name' placeholder="Enter your name" />
-                        <Input  value = {email} setValue={setEmail} type="text" fullWidth label='Email'  placeholder="Enter your email" />
+                        <Input value = {name} setValue={setName}   type="text"  fullWidth placeholder="Enter your name" required />
+                        <Input  value = {email} setValue={setEmail} type="text"  fullWidth  placeholder="Enter your email" required/>
                         <FormControl component="fieldset" style={marginTop}>
                             <FormLabel component="legend">Gender</FormLabel>
                             <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
@@ -33,14 +33,18 @@ const Signup = () => {
                                 <FormControlLabel value="male" control={<Radio />} label="Male" />
                             </RadioGroup>
                         </FormControl>
-                        <Input value = {number} setValue={setNumber} type="text" fullWidth  label='Phone Number' placeholder="Enter your phone number" />
-                        <Input setValue={setPassword} placeholder='Enter password' fullWidth label='Password' type='password' placeholder="Enter your password"/>
+                        <Input value = {number} setValue={setNumber} type="text"  fullWidth required placeholder="Enter your phone number" />
+                        <Input value = {password}  setValue={setPassword}  fullWidth required label='Password' type='password' placeholder="Enter your password"/>
                         <Input fullWidth label='Confirm Password' type='password' placeholder="Confirm your password"/>
                         <FormControlLabel
                             control={<Checkbox name="checkedA" />}
                             label="I accept the terms and conditions."
                         />
-                        <Button type='submit' variant='contained' color='primary' onClick={()=>registration(email,password)} >Sign up</Button>
+                        <Button type='submit' variant='contained' color='primary' onClick={()=>registration(name,
+                            email,
+                            password,
+                            gender,
+                            number)} >Sign up</Button>
                     </form>
                 </Paper>
             </Grid>
