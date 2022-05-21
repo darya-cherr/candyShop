@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Grid, Paper, TextField, Button} from '@material-ui/core'
+import {Grid, Paper, Button} from '@material-ui/core'
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -13,6 +13,9 @@ const Signup = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const [name, setName] = useState("")
+    const [gender, setGender] = useState("")
+    const [number, setNumber] = useState("")
 
 
     const paperStyle = { padding: 20, width: 340,height: 664, margin: "20 auto" }
@@ -21,7 +24,7 @@ const Signup = () => {
             <Grid>
                 <Paper style={paperStyle}>
                     <form>
-                        <Input fullWidth label='Name' placeholder="Enter your name" />
+                        <Input value = {name} setValue={setName}  fullWidth label='Name' placeholder="Enter your name" />
                         <Input  value = {email} setValue={setEmail} type="text" fullWidth label='Email'  placeholder="Enter your email" />
                         <FormControl component="fieldset" style={marginTop}>
                             <FormLabel component="legend">Gender</FormLabel>
@@ -30,7 +33,7 @@ const Signup = () => {
                                 <FormControlLabel value="male" control={<Radio />} label="Male" />
                             </RadioGroup>
                         </FormControl>
-                        <Input fullWidth label='Phone Number' placeholder="Enter your phone number" />
+                        <Input value = {number} setValue={setNumber} type="text" fullWidth  label='Phone Number' placeholder="Enter your phone number" />
                         <Input setValue={setPassword} placeholder='Enter password' fullWidth label='Password' type='password' placeholder="Enter your password"/>
                         <Input fullWidth label='Confirm Password' type='password' placeholder="Confirm your password"/>
                         <FormControlLabel

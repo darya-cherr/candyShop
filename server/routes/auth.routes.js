@@ -12,7 +12,10 @@ const router = new Router()
 
 router.post('/registration',
     [check('email',"Incorrect email").isEmail(),
-        check('password',"Password must be longer than 3 and shorter than 12").isLength({min:3, max :12})
+        check('password',"Password must be longer than 3 and shorter than 12").isLength({min:3, max :12}),
+        check('name',"Password must be longer than 3 and shorter than 12"),
+        check('number',"Password must be longer than 3 and shorter than 12").isLength(12),
+        check('gender',"Password must be longer than 3 and shorter than 12")
     ],
     async (req,res) =>{
     try{
@@ -21,7 +24,11 @@ router.post('/registration',
         if(!errors.isEmpty()){
             return res.status(400).json({message:'Incorrect request',errors })
         }
-        const {email, password} = req.body
+        const {name,
+            email,
+            password,
+            gender,
+            number} = req.body
 
         const candidate = await User.findOne({email})
 
@@ -31,7 +38,7 @@ router.post('/registration',
 
         const hashPassword = await bcrypt.hash(password,8)
 
-        const user = new User({email, password:hashPassword})
+        const user = new User({name,email, password:hashPassword, gender , number })
 
         await user.save()
         return res.json({message:"User was created"})
