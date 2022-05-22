@@ -10,11 +10,20 @@ import {registration} from "../../../actions/user";
 import Input from "../input/Input";
 
 const Signup = () => {
+
+
+
+    function check(){
+        var checkbox = document.getElementById('checkedA');
+        if (checkbox.checked != true){
+            alert("you need to be fluent in English to apply for the job");
+        }
+    }
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const [name, setName] = useState("")
-    const [gender, setGender] = useState("")
     const [number, setNumber] = useState("")
 
 
@@ -23,29 +32,24 @@ const Signup = () => {
         return (
             <Grid>
                 <Paper style={paperStyle}>
-                    <form>
+                    <form name="myForm">
                         <Input value = {name} setValue={setName}   type="text"  fullWidth placeholder="Enter your name" required />
                         <Input  value = {email} setValue={setEmail} type="text"  fullWidth  placeholder="Enter your email" required/>
-                        <FormControl component="fieldset" style={marginTop}>
-                            <FormLabel component="legend">Gender</FormLabel>
-                            <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
-                                <FormControlLabel value="female" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male" control={<Radio />} label="Male" />
-                            </RadioGroup>
-                        </FormControl>
+
                         <Input value = {number} setValue={setNumber} type="text"  fullWidth required placeholder="Enter your phone number" />
                         <Input value = {password}  setValue={setPassword}  fullWidth required label='Password' type='password' placeholder="Enter your password"/>
                         <Input fullWidth label='Confirm Password' type='password' placeholder="Confirm your password"/>
                         <FormControlLabel
-                            control={<Checkbox name="checkedA" />}
+                            control={<Checkbox onclick="check()"  name="checkedA" id="checkedA" />}
                             label="I accept the terms and conditions."
                         />
-                        <Button type='submit' variant='contained' color='primary' onClick={()=>registration(name,
+
+
+                        {<Button id="btn" /*disabled="disabled"*/ type='submit' variant='contained' color='primary' onClick={()=>registration(name,
                             email,
                             password,
-                            gender,
-                            number)} >Sign up</Button>
-                    </form>
+                            number)} >Sign up</Button>}
+                        </form>
                 </Paper>
             </Grid>
         )

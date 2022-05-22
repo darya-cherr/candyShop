@@ -13,7 +13,6 @@ const router = new Router()
 router.post('/registration',
     [check('name',"Incorrect email"),
         check('email',"Incorrect email").isEmail(),
-       check('gender',"Password must be longer than 3 and shorter than 12"),
         check('password',"Password must be longer than 3 and shorter than 12").isLength({min:3, max :12}),
      //   check('name',"Password must be longer than 3 and shorter than 12"),
         check('number',"Password must be 12").isLength(12)
@@ -28,7 +27,7 @@ router.post('/registration',
         const {name,
             email,
             password,
-            gender,
+            
             number} = req.body
 
         const candidate = await User.findOne({email})
@@ -39,7 +38,7 @@ router.post('/registration',
 
         const hashPassword = await bcrypt.hash(password,8)
 
-        const user = new User({name,email, password:hashPassword, gender , number })
+        const user = new User({name,email, password:hashPassword, number })
 
         await user.save()
         return res.json({message:"User was created"})
@@ -54,7 +53,7 @@ router.post('/login',
     async (req, res) => {
         try {
             const {email, password} = req.body
-            const user = await Account.findOne({email})
+            const user = await User.findOne({email})
             if (!user) {
                 return res.status(404).json({message: "User not found"})
             }
