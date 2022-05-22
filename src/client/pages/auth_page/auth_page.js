@@ -5,6 +5,7 @@ import {Grid, Paper,  Button, Typography,Link} from '@material-ui/core'
 import {login, registration} from "../../../actions/user";
 import Input from "../input/Input";
 import {useDispatch} from "react-redux";
+import Signup from "../sign_up/sign_up";
 const Login =({handleChange})=>{
     const paperStyle={padding :20,height: 664,width:340, margin:"0 auto"}
 
@@ -17,7 +18,7 @@ const Login =({handleChange})=>{
     return(
         <Grid>
             <Paper  style={paperStyle}>
-                <Input value = {email}  setValue={setEmail} type="text"  placeholder='Enter username' fullWidth required/>
+                <Input value = {email}  setValue={setEmail} type="text"  placeholder='Enter email' fullWidth required/>
                 <Input value = {password}  setValue={setPassword}  placeholder='Enter password' type='password' fullWidth required/>
                 <FormControlLabel
                     control={
@@ -29,13 +30,9 @@ const Login =({handleChange})=>{
                     label="Remember me"
                 />
                 <Button type='submit' color='primary' variant="contained" style={btnstyle}   onClick={() => dispatch(login(email, password))}>Sign in</Button>
-                <Typography >
-                    <Link href="#" >
-                        Forgot password ?
-                    </Link>
-                </Typography>
+
                 <Typography > Do you have an account ?
-                    <Link href="#" onClick={()=>registration(email,password)} >
+                    <Link href="#" onClick={()=>Signup} >
                         Sign Up
                     </Link>
                 </Typography>
