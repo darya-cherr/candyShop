@@ -6,8 +6,8 @@ import {useJsApiLoader} from "@react-google-maps/api";
 
 
 
-import "./../../../node_modules/slick-carousel/slick/slick.css"
-import "./../../../node_modules/slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import styled from "styled-components";
 
 
@@ -701,7 +701,7 @@ const Contacts =() =>{
                 If you have any questions or cooperation offers:
                 fill in the form below
             </p>
-            <form action="#" name="form">
+            <form action="send_mail.php" name="form" method="POST">
                 <div class="input-box">
                     <input
                         type="text"
@@ -742,11 +742,11 @@ const Contacts =() =>{
         </div>
     </div>
 </div>
-<script
-    src="https://kit.fontawesome.com/fce9a50d02.js"
-    crossorigin="anonymous"
-></script>
-<script src="app.js"></script>
+    <script
+        src="https://kit.fontawesome.com/fce9a50d02.js"
+        crossOrigin="anonymous"
+    ></script>
+<script src="app.js"/>
 
 
       <div className="Contacts">{isLoaded ?

@@ -1,7 +1,6 @@
 import React from "react";
 import {GoogleMap} from "@react-google-maps/api";
-import s from './module.css'
-import button from "bootstrap/js/src/button";
+import s from '../module.css'
 
 
 const containerStyle = {

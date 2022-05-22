@@ -5,15 +5,15 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import SignInOutContainer from "./client/containers/container";
 import Home from "./client/pages/Home"
 import About from "./client/pages/About"
-import ProductsPage from "./client/pages/ProductsPage"
-import Contacts from "./client/pages/Contacts"
+import ProductsPage from "./client/pages/product/ProductsPage"
+import Contacts from "./client/pages/contacts/Contacts"
 import {
     BrowserRouter as Router,
     Routes,
     Route
 } from "react-router-dom";
-import ProductList from "./client/pages/ProductList";
-import ProductInfo from "./client/pages/ProductInfo";
+import ProductList from "./client/pages/product/ProductList";
+import ProductInfo from "./client/pages/product/ProductInfo";
 import Cart from "./client/pages/Cart";
 
 

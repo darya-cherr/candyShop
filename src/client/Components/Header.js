@@ -29,11 +29,12 @@ const Styles = styled.div `
 `
 
 function Header(){
-    const nick = useSelector(state => state.user.currentUser)
+
     const isAuth = useSelector(state => state.user.isAuth)
     const dispatch = useDispatch()
 
     return (
+
        <>
           <Styles>
            <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className="shadow1">
@@ -53,8 +54,7 @@ function Header(){
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
                    </Nav>
                    <Nav className="me-5">
-
-                       {isAuth &&  <Button variant="danger" className="me-5" onClick={() => dispatch(logout())}><Link to="/authorization" className="button">Log Out</Link></Button>}
+                       { isAuth &&  <Button variant="danger" className="me-5" onClick={() => dispatch(logout())}><Link to="/authorization" className="button">Log Out</Link></Button>}
                        {!isAuth &&  <Button variant="danger" className="me-5"><Link to="/authorization" className="button">Log In</Link></Button>}
                    </Nav>
                </Navbar.Collapse>

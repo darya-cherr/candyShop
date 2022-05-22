@@ -4,8 +4,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Login from '../pages/auth_page/auth_page'
-import Signup from '../pages/sign_up/sign_up'
+import Login from '../pages/sign_in/auth_page/auth_page'
+import Signup from '../pages/sign_in/sign_up/sign_up'
 const SignInOutContainer=()=>{
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Categories from "./Categories";
+import Categories from "../Categories";
 import Products from "./Products";
 import styled from "styled-components";
 

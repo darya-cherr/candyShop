@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import {Grid, Paper,  Button, Typography,Link} from '@material-ui/core'
-import {login, registration} from "../../../actions/user";
-import Input from "../input/Input";
+import {login} from "../../../../actions/user";
+import Input from "../../input/Input";
 import {useDispatch} from "react-redux";
 import Signup from "../sign_up/sign_up";
 const Login =({handleChange})=>{

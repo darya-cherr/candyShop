@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Announcement from "./Announcement";
+import Announcement from "../Announcement";
 import Products from "./Products";
 
 const Container = styled.div``;
