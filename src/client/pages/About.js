@@ -1,21 +1,21 @@
 import React, {useEffect} from 'react';
 import styled from "styled-components"
-import HeadCake from './../Components/aboutHeadCake.jpg'
+import HeadCake from '../Components/image/aboutHeadCake.jpg'
 import "./../../../node_modules/slick-carousel/slick/slick.css";
 import "./../../../node_modules/slick-carousel/slick/slick-theme.css";
 import SliderAbout from './../Components/SliderAbout'
 import {Container} from "react-bootstrap";
 import "./../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Cards from "./Cards"
-import img0 from './../Components/img.png'
-import img1 from './../Components/img_1.png'
-import img2 from './../Components/img_2.png'
-import img3 from './../Components/img_3.png'
+import img0 from '../Components/image/img.png'
+import img1 from '../Components/image/img_1.png'
+import img2 from '../Components/image/img_2.png'
+import img3 from '../Components/image/img_3.png'
 
-import cake1 from './../Components/cake3.jpg'
-import cake2 from './../Components/cake5.jpg'
-import cake3 from './../Components/cake14.jpg'
-import cake4 from './../Components/cake15.jpg'
+import cake1 from '../Components/image/cake3.jpg'
+import cake2 from '../Components/image/cake5.jpg'
+import cake3 from '../Components/image/cake14.jpg'
+import cake4 from '../Components/image/cake15.jpg'
 
 
 const Styles = styled.div `

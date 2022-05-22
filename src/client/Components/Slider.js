@@ -1,9 +1,9 @@
 import React from 'react';
 import {Carousel} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"
-import SliderCake from "./cake8.jpg"
-import SliderCake2 from "./cake11.jpg"
-import SliderCake3 from "./cake10.jpg"
+import SliderCake from "./image/cake8.jpg"
+import SliderCake2 from "./image/cake11.jpg"
+import SliderCake3 from "./image/cake10.jpg"
 import styled from "styled-components"
 
 const Styles = styled.div `

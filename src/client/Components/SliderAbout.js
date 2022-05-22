@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components"
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import Slide1 from './../Components/about1.jpg'
-import Slide2 from './../Components/about2.jpg'
-import Slide3 from './../Components/about3.jpg'
-import Slide4 from './../Components/about4.jpg'
-import Slide5 from './../Components/about5.jpg'
-import Slide6 from './../Components/about6.jpg'
+import Slide1 from './image/about1.jpg'
+import Slide2 from './image/about2.jpg'
+import Slide3 from './image/about3.jpg'
+import Slide4 from './image/about4.jpg'
+import Slide5 from './image/about5.jpg'
+import Slide6 from './image/about6.jpg'
 
 
 import "./../../../node_modules/slick-carousel/slick/slick.css"

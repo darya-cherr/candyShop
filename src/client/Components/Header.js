@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from './logo.png';
+import logo from './image/logo.png';
 import {Button, Nav, Navbar, Container} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css"
 import {Link} from "react-router-dom";
 import styled from "styled-components"
-import Glide from "@glidejs/glide";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../../reducers/userReducer";
 
@@ -30,6 +29,7 @@ const Styles = styled.div `
 `
 
 function Header(){
+    const nick = useSelector(state => state.user.currentUser)
     const isAuth = useSelector(state => state.user.isAuth)
     const dispatch = useDispatch()
 
@@ -53,6 +53,7 @@ function Header(){
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
                    </Nav>
                    <Nav className="me-5">
+
                        {isAuth &&  <Button variant="danger" className="me-5" onClick={() => dispatch(logout())}><Link to="/authorization" className="button">Log Out</Link></Button>}
                        {!isAuth &&  <Button variant="danger" className="me-5"><Link to="/authorization" className="button">Log In</Link></Button>}
                    </Nav>

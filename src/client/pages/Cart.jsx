@@ -1,8 +1,8 @@
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "./Announcement";
-import Cake from "../Components/cake3.jpg";
-import Dessert from "../Components/dessert_categories.jpg";
+import Cake from "../Components/image/cake3.jpg";
+import Dessert from "../Components/image/dessert_categories.jpg";
 const Container = styled.div`
   font-family: "Cambria";`;
 
