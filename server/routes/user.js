@@ -6,6 +6,7 @@ const {
     verifyTokenAndAuthorization,
     verifyTokenAndAdmin,
 } = require("./verifyToken");
+const config = require("config");
 const router = require("express").Router();
 
 //UPDATE
@@ -13,7 +14,7 @@ router.put("/:id", verifyTokenAndAuthorization, async (req, res) => {
     if (req.body.password) {
         req.body.password = bcrypt.encrypt(
             req.body.password,
-            process.env.PASS_SEC
+            config.get("secretKey")
         ).toString();
     }
 

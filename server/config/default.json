@@ -1,5 +1,6 @@
 {
   "serverPort": 5000,
   "dbUrl": "mongodb+srv://dshparko:LK6qAgE6e1MNkB1a@backery.vdzgl.mongodb.net/?retryWrites=true&w=majority",
-  "secretKey": "mern-secret-key"
+  "secretKey": "mern-secret-key",
+  "JWT_SEC": "jwt-secret-key"
 }

@@ -10,11 +10,11 @@ const router = new Router()
 
 
 router.post('/registration',
-    [check('name',"Incorrect email"),
+    [check('name',"Incorrect name"),
         check('email',"Incorrect email").isEmail(),
         check('password',"Password must be longer than 3 and shorter than 12").isLength({min:3, max :12}),
         //   check('name',"Password must be longer than 3 and shorter than 12"),
-        check('number',"Password must be 12").isLength(12)
+        check('number',"Number must be 12").isLength(12)
     ],
     async (req,res) =>{
         try{
@@ -60,17 +60,13 @@ router.post('/login',
             if (!isPassValid) {
                 return res.status(400).json({message: "Invalid password"})
             }
-            const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})
-            return res.json({
-                token,
-                user: {
-                    id: user.id,
-                    email: user.email
-                }
-            })
+            const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "3d"})
+
+            const { pass, ...others } = user._doc;
+            return res.status(200).json({...others, token});
         } catch (e) {
             console.log(e)
-            res.send({message: "Server error"})
+            res.status(500).send({message: "Server error"})
         }
     })
 

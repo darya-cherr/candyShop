@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const Container = styled.div`
   flex: 1;
@@ -86,7 +87,7 @@ const Styles = styled.div `
 const CategoryItem = ({ item }) => {
     return (
         <Container>
-
+            <Link to={`/productList/${item.cat}`}>
             <Image src={item.img} />
             <Info>
                 <Styles>
@@ -98,7 +99,7 @@ const CategoryItem = ({ item }) => {
                             <Button>SHOP NOW</Button> </div></div></div></div>
             </Styles>
             </Info>
-
+            </Link>
         </Container>
     );
 };

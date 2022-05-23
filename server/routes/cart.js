@@ -51,3 +51,5 @@ router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router;

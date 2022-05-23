@@ -12,7 +12,6 @@ import Products9 from '../Components/image/products9.jpg'
 import Products10 from '../Components/image/products10.jpg'
 import Products11 from '../Components/image/products11.jpg'
 import Products12 from '../Components/image/products12.jpg'
-import Products13 from '../Components/image/products13.jpg'
 import Products14 from '../Components/image/products14.jpg'
 import Products15 from '../Components/image/products15.jpg'
 import Products16 from '../Components/image/products16.jpg'
@@ -23,16 +22,19 @@ export const categories = [
         id: 1,
         img: Cake,
         title: "CAKES",
+        cat: "cakes",
     },
     {
         id: 2,
         img: Dessert,
         title: "DESSERTS",
+        cat: "desserts",
     },
     {
         id: 3,
         img: Candy,
         title: "CANDIES",
+        cat: "candies",
     },
 ];
 

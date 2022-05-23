@@ -26,10 +26,10 @@ function App(){
             <Route exact path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/products" element={<ProductsPage/>}/>
-            <Route path="/product" element={<ProductInfo/>}/>
+            <Route path="/product/:id" element={<ProductInfo/>}/>
             <Route path="/contacts" element={<Contacts/>}/>
             <Route path="/cart" element={<Cart/>}/>
-            <Route path="/productList" element={<ProductList/>}/>
+            <Route path="/productList/:category" element={<ProductList/>}/>
             <Route path="/authorization" element={<SignInOutContainer/>}/>
         </Routes>
             <Footer/>
