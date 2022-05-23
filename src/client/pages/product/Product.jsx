@@ -24,15 +24,20 @@ const Info = styled.div`
 
 const Container = styled.div`
   flex: 1;
-  margin: 5px;
+  max-width: 25%;
+  font-family: "Cambria";
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.49);
+  margin: 15px;
+  padding: 25px;
   min-width: 280px;
   height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f5fbfd;
+  background-color: #ffffff;
   position: relative;
-  &:hover ${Info}{
+
+  &:hover ${Info} {
     opacity: 1;
   }
 `;
@@ -41,6 +46,7 @@ const Container = styled.div`
 const Image = styled.img`
   width: 100%;
   height: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.53);
   object-fit: cover;
   z-index: 2;
 `;
