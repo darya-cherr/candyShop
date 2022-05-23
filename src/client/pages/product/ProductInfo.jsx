@@ -6,6 +6,7 @@ import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {publicRequest} from "../../../requestMethods";
+import {addProduct} from "../../redux/cartRedux"
 
 const Container = styled.div`
   font-family: "Cambria";`;
@@ -154,9 +155,7 @@ const ProductInfo = () => {
                 </ImgContainer>
                 <InfoContainer>
                     <Title>{product.title}</Title>
-                    <Desc>
-                        {product.desc}
-                    </Desc>
+                    <Desc>{product.desc}</Desc>
                     <Price>$ {product.price}</Price>
                     <FilterContainer>
                         <Filter>
