@@ -10,6 +10,7 @@ const Pay = () => {
 
     return (
         <div style={{
+
             height: "100vh",
             display: "flex",
             alignItems: "center",
@@ -18,6 +19,7 @@ const Pay = () => {
         billingAddress
         shippingAddress
         description={"Your total is $20"}
+                           image={"https://bipbap.ru/wp-content/uploads/2019/06/eda-047.-800x800-640x640.jpg"}
                            amount={2000}
                            token={onToken}
                            stripeKey={"pk_test_51L2UWOCcRCFByi1N3Vct1R3LaTdDGHu0jxAemfiJODesG2v5kqcVkz4pLOuSgYKwPXoVyAOZYtRvmXYNXwnxM5PW00YBNOs16t"}
