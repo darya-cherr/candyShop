@@ -149,7 +149,7 @@ const ProductInfo = () => {
     const handleClick = () => {
         console.log(product, quantity, color, size);
         dispatch(
-            addProduct({ product, quantity, color, size })
+            addProduct({ ...product, quantity, color, size })
         );
     };
     return (
