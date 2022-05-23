@@ -1,11 +1,31 @@
 import StripeCheckout from 'react-stripe-checkout'
-import {changeSlide} from "react-slick/lib/utils/innerSliderUtils";
+import {useState, useEffect} from "react";
+import axios from "axios";
 
 const Pay = () => {
+    const [stripeToken, setStripeToken] = useState(null)
 
     const onToken = (token)=>{
-        console.log(token)
+        setStripeToken(token)
     }
+
+
+    useEffect(()=>{
+        const makeRequest = async () =>{
+            try{
+              const res = await  axios.post("http://localhost:5000/api/checkout/payment",
+                    {tokenId:stripeToken.id,
+                    amount: 2000,
+                    })
+                console.log(res.data)
+            }catch(err){
+                console.log(err)
+            }
+        }
+
+        stripeToken&&makeRequest()
+
+    },[stripeToken])
 
 
     return (
@@ -15,7 +35,9 @@ const Pay = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-        }}><StripeCheckout name = "bakery"
+        }}>
+            {stripeToken?(<span>Processing. Please wait... </span>):(
+            <StripeCheckout name = "bakery"
         billingAddress
         shippingAddress
         description={"Your total is $20"}
@@ -37,7 +59,7 @@ const Pay = () => {
                 }}>
                 Pay Now
             </button></StripeCheckout>
-        </div>
+            )} </div>
 
     )
 }
