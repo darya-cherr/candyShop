@@ -2,5 +2,6 @@
   "serverPort": 5000,
   "dbUrl": "mongodb+srv://dshparko:LK6qAgE6e1MNkB1a@backery.vdzgl.mongodb.net/?retryWrites=true&w=majority",
   "secretKey": "mern-secret-key",
-  "JWT_SEC": "jwt-secret-key"
+  "JWT_SEC": "jwt-secret-key",
+  "STRIPE_KEY": "sk_test_51L2UWOCcRCFByi1NGiLGKZlNdNX6SS67W9MAqvma75DEXUiWpBP4McFW0kTsJgglVNwi6reQ8ucJkw8bxQ4hqKrF0028gQNXrL"
 }

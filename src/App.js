@@ -15,6 +15,7 @@ import {
 import ProductList from "./client/pages/product/ProductList";
 import ProductInfo from "./client/pages/product/ProductInfo";
 import Cart from "./client/pages/Cart";
+import Pay from "./client/pages/pay/Pay";
 
 
 function App(){
@@ -26,6 +27,8 @@ function App(){
             <Route exact path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/products" element={<ProductsPage/>}/>
+
+            <Route path="/pay" element={<Pay/>}/>
             <Route path="/product/:id" element={<ProductInfo/>}/>
             <Route path="/contacts" element={<Contacts/>}/>
             <Route path="/cart" element={<Cart/>}/>

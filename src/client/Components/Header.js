@@ -52,6 +52,8 @@ function Header(){
                        <Nav.Link className="me-5"><Link to="/about"> ABOUT US</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/products"> PRODUCTS</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
+
+                       <Nav.Link className="me-5"><Link to="/pay"> PAY</Link></Nav.Link>
                    </Nav>
                    <Nav className="me-5">
                        { isAuth &&  <Button variant="danger" className="me-5" onClick={() => dispatch(logout())}><Link to="/authorization" className="button">Log Out</Link></Button>}

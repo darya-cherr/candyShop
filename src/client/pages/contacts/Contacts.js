@@ -733,7 +733,7 @@ const Contacts =() =>{
                     <label for="phone">Format: 375290000000 or 3753300000000</label>
                 </div>
                 <div class="input-box message-box">
-                    <textarea placeholder="Message"></textarea>
+                    <textarea placeholder="Message"  name="message"></textarea>
                 </div>
                 <div class="button">
                     <input type="submit" id="button" value="Send" />
@@ -742,10 +742,7 @@ const Contacts =() =>{
         </div>
     </div>
 </div>
-    <script
-        src="https://kit.fontawesome.com/fce9a50d02.js"
-        crossOrigin="anonymous"
-    ></script>
+
 <script src="app.js"/>
 
 
