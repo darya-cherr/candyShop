@@ -136,7 +136,21 @@ const ProductInfo = () => {
             }
         };
         getProduct();
+
     }, [id]);
+
+    useEffect(() =>{
+        const setColorSize = async () => {
+            try {
+                const res = await publicRequest.get("/products/find/" + id);
+                setColor(res.data.color);
+                setSize(res.data.size);
+            } catch(e) {
+            }
+        };
+        setColorSize();
+
+    },)
 
     const handleQuantity = (type) => {
         if (type === "dec") {
@@ -147,9 +161,9 @@ const ProductInfo = () => {
     };
 
     const handleClick = () => {
-        console.log(product, quantity, color, size);
+            console.log(product, quantity, color, size);
         dispatch(
-            addProduct({ ...product, quantity, color, size })
+            addProduct({...product, quantity, color, size })
         );
     };
     return (

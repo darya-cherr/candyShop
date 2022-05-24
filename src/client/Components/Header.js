@@ -36,8 +36,7 @@ function Header(){
     const isAuth = useSelector(state => state.user.isAuth)
     const dispatch = useDispatch()
     const quantity = useSelector(state=>state.cart.quantity)
-    const cart = useSelector(state=>state.cart)
-    console.log(cart);
+
 
     return (
 
@@ -58,8 +57,6 @@ function Header(){
                        <Nav.Link className="me-5"><Link to="/about"> ABOUT US</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/products"> PRODUCTS</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
-
-                       <Nav.Link className="me-5"><Link to="/pay"> PAY</Link></Nav.Link>
                    </Nav>
 
                    <Nav> <Link to="/cart">
