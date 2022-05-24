@@ -6,9 +6,9 @@ import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {publicRequest} from "../../../requestMethods";
+import {addProduct} from "../../redux/cartRedux"
 
-const Container = styled.div`
-  font-family: "Cambria";`;
+const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 50px;
@@ -17,11 +17,14 @@ const Wrapper = styled.div`
 
 const ImgContainer = styled.div`
   flex: 1;
+  padding: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 90vh;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   object-fit: cover;
 `;
 
@@ -56,7 +59,8 @@ const Filter = styled.div`
 `;
 
 const FilterTitle = styled.span`
-  font-size: 20px;
+  font-size: 25px;
+  padding: 15px;
   font-weight: 200;
 `;
 
@@ -93,7 +97,7 @@ const Amount = styled.span`
   width: 30px;
   height: 30px;
   border-radius: 10px;
-  border: 1px solid rgba(14, 13, 13, 0.73);
+  border: 1px solid #e1122c;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +120,7 @@ const Button = styled.button`
 const ProductInfo = () => {
     const location = useLocation();
     const id = location.pathname.split("/")[2];
+
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
     const [color, setColor] = useState("");
@@ -127,10 +132,25 @@ const ProductInfo = () => {
             try {
                 const res = await publicRequest.get("/products/find/" + id);
                 setProduct(res.data);
-            } catch {}
+            } catch(e) {
+            }
         };
         getProduct();
+
     }, [id]);
+
+    useEffect(() =>{
+        const setColorSize = async () => {
+            try {
+                const res = await publicRequest.get("/products/find/" + id);
+                setColor(res.data.color);
+                setSize(res.data.size);
+            } catch(e) {
+            }
+        };
+        setColorSize();
+
+    },)
 
     const handleQuantity = (type) => {
         if (type === "dec") {
@@ -141,8 +161,9 @@ const ProductInfo = () => {
     };
 
     const handleClick = () => {
+            console.log(product, quantity, color, size);
         dispatch(
-            addProduct({ ...product, quantity, color, size })
+            addProduct({...product, quantity, color, size })
         );
     };
     return (
@@ -154,24 +175,16 @@ const ProductInfo = () => {
                 </ImgContainer>
                 <InfoContainer>
                     <Title>{product.title}</Title>
-                    <Desc>
-                        {product.desc}
-                    </Desc>
+                    <Desc>{product.desc}</Desc>
                     <Price>$ {product.price}</Price>
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color</FilterTitle>
-                            {product.color?.map((c) => (
-                                <FilterColor color={c} key={c} onClick={() => setColor(c)} />
-                            ))}
+                                <FilterColor color={product.color} />
                         </Filter>
                         <Filter>
                             <FilterTitle>Size</FilterTitle>
-                            <FilterSize onChange={(e) => setSize(e.target.value)}>
-                                {product.size?.map((s) => (
-                                    <FilterSizeOption key={s}>{s}</FilterSizeOption>
-                                ))}
-                            </FilterSize>
+                            <h1>{product.size}</h1>
                         </Filter>
                     </FilterContainer>
                     <AddContainer>

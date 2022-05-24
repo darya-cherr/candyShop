@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from './image/logo.png';
 import {Button, Nav, Navbar, Container} from "react-bootstrap";
+import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import "bootstrap/dist/css/bootstrap.min.css"
 import {Link} from "react-router-dom";
 import styled from "styled-components"
+import { Badge } from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../../reducers/userReducer";
 
@@ -26,12 +28,15 @@ const Styles = styled.div `
   .shadow1 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   }
+  
 `
 
 function Header(){
 
     const isAuth = useSelector(state => state.user.isAuth)
     const dispatch = useDispatch()
+    const quantity = useSelector(state=>state.cart.quantity)
+
 
     return (
 
@@ -52,8 +57,13 @@ function Header(){
                        <Nav.Link className="me-5"><Link to="/about"> ABOUT US</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/products"> PRODUCTS</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
+                   </Nav>
 
-                       <Nav.Link className="me-5"><Link to="/pay"> PAY</Link></Nav.Link>
+                   <Nav> <Link to="/cart">
+                       {isAuth &&  <Badge className="me-5" badgeContent={quantity} color="secondary">
+                           <ShoppingCartOutlined />
+                       </Badge>}
+                   </Link>
                    </Nav>
                    <Nav className="me-5">
                        { isAuth &&  <Button variant="danger" className="me-5" onClick={() => dispatch(logout())}><Link to="/authorization" className="button">Log Out</Link></Button>}
