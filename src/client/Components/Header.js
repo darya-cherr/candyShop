@@ -36,9 +36,10 @@ function Header(){
     const isAuth = useSelector(state => state.user.isAuth)
     const dispatch = useDispatch()
     const quantity = useSelector(state=>state.cart.quantity)
-
+console.log(useSelector(state =>state));
 
     return (
+
 
        <>
           <Styles>

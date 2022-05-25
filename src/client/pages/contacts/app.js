@@ -3,6 +3,9 @@ const formArr = Array.from(form);
 const validFormArr = [];
 const button = form.elements["button"];
 
+
+console.log("HELLO")
+
 formArr.forEach((el) => {
   if (el.hasAttribute("data-reg")) {
     el.setAttribute("is-valid", "0");

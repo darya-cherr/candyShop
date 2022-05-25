@@ -12,7 +12,6 @@ import styled from "styled-components";
 
 
 const  API_KEY= process.env["REACT_APP_API_KEY"]
-console.log(API_KEY);
 const defaultCenter = {
     lat: -3.745,
     lng: -38.523
@@ -701,7 +700,7 @@ const Contacts =() =>{
                 If you have any questions or cooperation offers:
                 fill in the form below
             </p>
-            <form action="send_mail.php" name="form" method="POST">
+            <form action="/send_mail.php" name="form" method="post">
                 <div class="input-box">
                     <input
                         type="text"
@@ -742,9 +741,7 @@ const Contacts =() =>{
         </div>
     </div>
 </div>
-
 <script src="app.js"/>
-
 
       <div className="Contacts">{isLoaded ?
           <Map center={defaultCenter}/>:<h2>Not avalible</h2>}
