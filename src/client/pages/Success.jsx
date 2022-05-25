@@ -1,14 +1,41 @@
 import { useEffect, useState } from "react";
 import {userRequest} from "../../requestMethods";
-import {useLocation} from "react-router-dom";
+import {useLocation} from "react-router";
 import {useSelector} from "react-redux";
+import styled from "styled-components";
 
+const Container = styled.div`
+  font-family: "Cambria";
+  width:100%;
+  padding: 100px;
+  font-size: 24px;
+  align-content: center;
+  justify-content: center;
+  display:flex;
+`
+
+
+const Button = styled.button`
+  font-family: "Cambria";
+  border: none;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #e1122c;
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    background-color: rgba(225, 18, 44, 0.83);
+  }
+`;
 
 const Success = () => {
     const location = useLocation();
     const data = location.state.stripeData;
     const cart = location.state.cart;
-    const currentUser = useSelector((state) => state.user.currentUser);
+    const currentUser = useSelector(state => state.user.currentUser);
+    console.log(currentUser);
     const [orderId, setOrderId] = useState(null);
 
     useEffect(() => {
@@ -24,26 +51,32 @@ const Success = () => {
                     address: data.billing_details.address,
                 });
                 setOrderId(res.data._id);
-            } catch {}
+                console.log(res.data._id);
+                console.log(orderId);
+            } catch(e) {console.log(e)}
         };
         data && createOrder();
     }, [cart, data, currentUser]);
 
     return (
+        <Container>
         <div
             style={{
-                height: "100vh",
                 display: "flex",
+                width: "fit-content",
+                padding: "50px",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                boxShadow: "0 0 20px rgba(0, 0, 0, 0.8)",
             }}
         >
             {orderId
                 ? `Order has been created successfully. Your order number is ${orderId}`
                 : `Successfull. Your order is being prepared...`}
-            <button style={{ padding: 10, marginTop: 20 }}>Go to Homepage</button>
+            <Button >Go to Homepage</Button>
         </div>
+        </Container>
     );
 };
 
