@@ -2,7 +2,10 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 
 const verifyToken = (req, res, next) => {
-    const authHeader = req.headers.token;
+    console.log(`token $${req.headers}`)
+
+    const authHeader = req.headers.authorization;
+    console.log(`header token $${authHeader}`)
     if (authHeader) {
         const token = authHeader.split(" ")[1];
         jwt.verify(token, config.get("JWT_SEC"), (err, user) => {
