@@ -6,11 +6,12 @@ import Dessert from "../Components/image/dessert_categories.jpg";
 import {useSelector} from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import {useEffect, useState} from "react";
-import {useHistory} from "react-router";
+import {useNavigate} from "react-router";
 import {userRequest} from "../../requestMethods";
 
 
-const KEY = process.env.STRIPE_KEY;
+const KEY = process.env.REACT_APP_STRIPE;
+
 
 const Container = styled.div`
   font-family: "Cambria";`;
@@ -167,11 +168,14 @@ const Button = styled.button`
 const Cart = () => {
     const cart = useSelector(state=>state.cart);
     const [stripeToken, setStripeToken] = useState(null);
-    const history = useHistory();
+    const history = useNavigate();
+
 
     const onToken = (token)=>{
         setStripeToken(token)
     }
+
+    console.log(KEY);
 
     useEffect(() => {
         const makeRequest = async () => {
@@ -180,10 +184,10 @@ const Cart = () => {
                     tokenId: stripeToken.id,
                     amount: cart.total * 100,
                 });
-                history.push("/success", {
+                history("/success", {
                     stripeData: res.data,
                     products: cart, });
-            } catch {}
+            } catch {console.log("error")}
         };
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, history]);
@@ -260,7 +264,7 @@ const Cart = () => {
                                         image={"https://bipbap.ru/wp-content/uploads/2019/06/eda-047.-800x800-640x640.jpg"}
                                         amount={cart.total*100}
                                         token={onToken}
-                                        stripeKey={KEY}
+                                        stripeKey={"pk_test_51L2UWOCcRCFByi1N3Vct1R3LaTdDGHu0jxAemfiJODesG2v5kqcVkz4pLOuSgYKwPXoVyAOZYtRvmXYNXwnxM5PW00YBNOs16t"}
                         ><Button>CHECKOUT NOW</Button>
                             </StripeCheckout>
                     </Summary>
