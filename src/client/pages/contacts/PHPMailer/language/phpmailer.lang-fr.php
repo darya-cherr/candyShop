@@ -4,7 +4,7 @@
  * French PHPMailer language file: refer to English translation for definitive list
  * @package PHPMailer
  * Some French punctuation requires a thin non-breaking space (U+202F) character before it,
- * for example before a colon or exclamation mark.
+ * for example before a colon or excbakerytion mark.
  * There is one of these characters between these quotes: " "
  * @see http://unicode.org/udhr/n/notes_fra.html
  */

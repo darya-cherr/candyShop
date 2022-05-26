@@ -10,7 +10,7 @@
 $PHPMAILER_LANG['authenticate']         = 'SMTP Error: Hindi mapatotohanan.';
 $PHPMAILER_LANG['connect_host']         = 'SMTP Error: Hindi makakonekta sa SMTP host.';
 $PHPMAILER_LANG['data_not_accepted']    = 'SMTP Error: Ang datos ay hindi naitanggap.';
-$PHPMAILER_LANG['empty_message']        = 'Walang laman ang mensahe';
+$PHPMAILER_LANG['empty_message']        = 'Walang bakeryn ang mensahe';
 $PHPMAILER_LANG['encoding']             = 'Hindi alam ang encoding: ';
 $PHPMAILER_LANG['execute']              = 'Hindi maisasagawa: ';
 $PHPMAILER_LANG['file_access']          = 'Hindi ma-access ang file: ';
