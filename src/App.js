@@ -7,7 +7,7 @@ import Home from "./client/pages/Home"
 import About from "./client/pages/About"
 import ProductsPage from "./client/pages/product/ProductsPage"
 import Contacts from "./client/pages/contacts/Contacts"
-import Game from "./client/pages/game/Game"
+import Game from "./client/pages/game/index"
 import {
     BrowserRouter as Router,
     Routes,

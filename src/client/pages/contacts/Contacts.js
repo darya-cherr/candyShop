@@ -700,7 +700,7 @@ const Contacts =() =>{
                 If you have any questions or cooperation offers:
                 fill in the form below
             </p>
-            <form action="/send_mail.php" name="form" method="post">
+            <form action="send_mail.php" name="form" method="post">
                 <div class="input-box">
                     <input
                         type="text"
@@ -719,7 +719,7 @@ const Contacts =() =>{
                         id="email"
                         data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
                     />
-                    <label for="email">В формате: name@mail.com</label>
+                    <label for="email">Format: name@mail.ru</label>
                 </div>
                 <div class="input-box">
                     <input
