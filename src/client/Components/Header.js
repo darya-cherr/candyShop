@@ -58,6 +58,8 @@ console.log(useSelector(state =>state));
                        <Nav.Link className="me-5"><Link to="/about"> ABOUT US</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/products"> PRODUCTS</Link></Nav.Link>
                        <Nav.Link className="me-5"><Link to="/contacts"> CONTACTS</Link></Nav.Link>
+
+                       <Nav.Link className="me-5"><Link to="/game"> GAME</Link></Nav.Link>
                    </Nav>
 
                    <Nav> <Link to="/cart">

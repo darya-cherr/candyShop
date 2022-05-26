@@ -20,15 +20,7 @@ const Login =({handleChange})=>{
             <Paper  style={paperStyle}>
                 <Input value = {email}  setValue={setEmail} type="text"  placeholder='Enter email' fullWidth required/>
                 <Input value = {password}  setValue={setPassword}  placeholder='Enter password' type='password' fullWidth required/>
-                <FormControlLabel
-                    control={
-                        <Checkbox
-                            name="checkedB"
-                            color="primary"
-                        />
-                    }
-                    label="Remember me"
-                />
+
                 <Button type='submit' color='primary' variant="contained" style={btnstyle}   onClick={() => dispatch(login(email, password))}>Sign in</Button>
 
                 <Typography > Do you have an account ?

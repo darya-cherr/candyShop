@@ -6,7 +6,7 @@ import Dessert from "../Components/image/dessert_categories.jpg";
 import {useSelector} from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import {useEffect, useState} from "react";
-import {useHistory} from "react-router";
+//import {useHistory} from "react-router";
 import {userRequest} from "../../requestMethods";
 
 
@@ -167,13 +167,13 @@ const Button = styled.button`
 const Cart = () => {
     const cart = useSelector(state=>state.cart);
     const [stripeToken, setStripeToken] = useState(null);
-    const history = useHistory();
+   // const history = useHistory();
 
     const onToken = (token)=>{
         setStripeToken(token)
     }
 
-    useEffect(() => {
+    /*useEffect(() => {
         const makeRequest = async () => {
             try {
                 const res = await userRequest.post("/checkout/payment", {
@@ -187,7 +187,7 @@ const Cart = () => {
         };
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, history]);
-
+*/
     console.log(stripeToken);
     return (
         <Container>

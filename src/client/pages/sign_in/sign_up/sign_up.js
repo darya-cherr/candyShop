@@ -25,14 +25,8 @@ const Signup = () => {
 
                         <Input value = {number} setValue={setNumber} type="text"  fullWidth required placeholder="Enter your phone number" />
                         <Input value = {password}  setValue={setPassword}  fullWidth required label='Password' type='password' placeholder="Enter your password"/>
-                        <Input fullWidth label='Confirm Password' type='password' placeholder="Confirm your password"/>
-                        <FormControlLabel
-                            control={<Checkbox onclick="check()"  name="checkedA" id="checkedA" />}
-                            label="I accept the terms and conditions."
-                        />
 
-
-                        {<Button id="btn" /*disabled="disabled"*/ type='submit' variant='contained' color='primary' onClick={()=>registration(name,
+                        {<Button align="ctnter" id="btn" /*disabled="disabled"*/ type='submit' variant='contained' color='primary' onClick={()=>registration(name,
                             email,
                             password,
                             number)} >Sign up</Button>}

@@ -7,6 +7,7 @@ import Home from "./client/pages/Home"
 import About from "./client/pages/About"
 import ProductsPage from "./client/pages/product/ProductsPage"
 import Contacts from "./client/pages/contacts/Contacts"
+import Game from "./client/pages/game/Game"
 import {
     BrowserRouter as Router,
     Routes,
@@ -33,6 +34,8 @@ function App(){
             <Route path="/productList/:category" element={<ProductList/>}/>
             <Route path="/authorization" element={<SignInOutContainer/>}/>
             <Route path="/success" element={<Success/>}/>
+
+            <Route path="/game" element={<Game/>}/>
         </Routes>
             <Footer/>
         </Router>

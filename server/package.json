@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.jsx",
+  "main": "Game.jsx",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
