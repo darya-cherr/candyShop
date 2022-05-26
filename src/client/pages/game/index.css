@@ -1,11 +1,14 @@
 .app {
   display: flex;
+    justify-content: center;
   padding: 30px;
 }
 
 .game {
   width: 560px;
   height: 560px;
+    box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.59) !important;
+    background-color: #eed38a;
   display: flex;
   flex-wrap: wrap;
 }
