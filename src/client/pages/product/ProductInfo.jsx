@@ -4,7 +4,7 @@ import Announcement from "../Announcement";
 import Candy from "../../Components/image/candy.jpg"
 import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {publicRequest} from "../../../requestMethods";
 import {addProduct} from "../../redux/cartRedux"
 
@@ -120,7 +120,7 @@ const Button = styled.button`
 const ProductInfo = () => {
     const location = useLocation();
     const id = location.pathname.split("/")[2];
-
+    const isAuth = useSelector(state => state.user.isAuth)
     const [product, setProduct] = useState({});
     const [quantity, setQuantity] = useState(1);
     const [color, setColor] = useState("");
@@ -187,14 +187,14 @@ const ProductInfo = () => {
                             <h1>{product.size}</h1>
                         </Filter>
                     </FilterContainer>
-                    <AddContainer>
+                    { isAuth && <AddContainer>
                         <AmountContainer>
                             <Remove onClick={() => handleQuantity("dec")} />
                             <Amount>{quantity}</Amount>
                             <Add onClick={() => handleQuantity("inc")} />
                         </AmountContainer>
                         <Button onClick={handleClick}>ADD TO CART</Button>
-                    </AddContainer>
+                    </AddContainer>}
                 </InfoContainer>
             </Wrapper>
         </Container>

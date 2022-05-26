@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import {userRequest} from "../../requestMethods";
 import {useLocation} from "react-router";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
+import {deleteProducts} from "../redux/cartRedux"
 
 const Container = styled.div`
   font-family: "Cambria";
@@ -36,6 +38,7 @@ const Success = () => {
     const cart = location.state.cart;
     const currentUser = useSelector(state => state.user.currentUser);
     console.log(currentUser);
+    const dispatch = useDispatch();
     const [orderId, setOrderId] = useState(null);
 
     useEffect(() => {
@@ -45,18 +48,25 @@ const Success = () => {
                     userId: currentUser._id,
                     products: cart.products.map((item) => ({
                         productId: item._id,
-                        quantity: item._quantity,
+                        title: item.title,
+                        img: item.img,
+                        price: item.price,
+                        quantity: item.quantity,
                     })),
                     amount: cart.total,
                     address: data.billing_details.address,
                 });
                 setOrderId(res.data._id);
-                console.log(res.data._id);
-                console.log(orderId);
+                dispatch(
+                    deleteProducts()
+                )
+                console.log(cart)
             } catch(e) {console.log(e)}
         };
         data && createOrder();
     }, [cart, data, currentUser]);
+
+
 
     return (
         <Container>
@@ -72,9 +82,11 @@ const Success = () => {
             }}
         >
             {orderId
-                ? `Order has been created successfully. Your order number is ${orderId}`
+                ? `Order has been created successfully. Your order number is ${orderId}` /*&& dispatch(
+                    deleteProducts(cart)
+                )*/
                 : `Successfull. Your order is being prepared...`}
-            <Button >Go to Homepage</Button>
+            <Link to={"/orders"}><Button>Go to Orders</Button></Link>
         </div>
         </Container>
     );
