@@ -3,10 +3,9 @@ const config = require("config");
 
 const verifyToken = (req, res, next) => {
     console.log(`token $${req.headers}`)
-
     const authHeader = req.headers.authorization;
     console.log(`header token $${authHeader}`)
-    if (authHeader) {
+   if (authHeader) {
         const token = authHeader.split(" ")[1];
         jwt.verify(token, config.get("JWT_SEC"), (err, user) => {
             if (err) res.status(403).json("Token is not valid!");

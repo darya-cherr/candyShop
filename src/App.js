@@ -16,6 +16,7 @@ import ProductList from "./client/pages/product/ProductList";
 import ProductInfo from "./client/pages/product/ProductInfo";
 import Cart from "./client/pages/Cart";
 import Success from "./client/pages/Success";
+import Orders from "./client/pages/Orders";
 
 
 function App(){
@@ -32,6 +33,7 @@ function App(){
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/productList/:category" element={<ProductList/>}/>
             <Route path="/authorization" element={<SignInOutContainer/>}/>
+            <Route path="/orders" element={<Orders/>}/>
             <Route path="/success" element={<Success/>}/>
         </Routes>
             <Footer/>

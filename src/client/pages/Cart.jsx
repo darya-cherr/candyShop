@@ -15,7 +15,8 @@ const KEY = process.env.REACT_APP_STRIPE;
 
 
 const Container = styled.div`
-  font-family: "Cambria";`;
+  font-family: "Cambria";
+`;
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -192,6 +193,7 @@ const Cart = () => {
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, history]);
 
+    console.log(cart.products);
 
     return (
         <Container>
@@ -202,7 +204,7 @@ const Cart = () => {
                     <Link to={"/products"}><TopButton>CONTINUE SHOPPING</TopButton></Link>
                     <TopTexts>
                         <TopText>Shopping Bag</TopText>
-                        <TopText>Your Wishlist</TopText>
+                        <Link to={"/orders"}><TopText>Orders</TopText></Link>
                     </TopTexts>
                     <TopButton type="filled">CHECKOUT NOW</TopButton>
                 </Top>

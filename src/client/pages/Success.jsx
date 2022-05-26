@@ -48,14 +48,15 @@ const Success = () => {
                     userId: currentUser._id,
                     products: cart.products.map((item) => ({
                         productId: item._id,
-                        quantity: item._quantity,
+                        title: item.title,
+                        img: item.img,
+                        price: item.price,
+                        quantity: item.quantity,
                     })),
                     amount: cart.total,
                     address: data.billing_details.address,
                 });
                 setOrderId(res.data._id);
-                console.log(res.data._id);
-                console.log(orderId);
                 dispatch(
                     deleteProducts()
                 )
@@ -85,7 +86,7 @@ const Success = () => {
                     deleteProducts(cart)
                 )*/
                 : `Successfull. Your order is being prepared...`}
-            <Link to={"/"}><Button>Go to Homepage</Button></Link>
+            <Link to={"/orders"}><Button>Go to Orders</Button></Link>
         </div>
         </Container>
     );
