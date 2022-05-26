@@ -8,6 +8,7 @@ import StripeCheckout from "react-stripe-checkout";
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import {userRequest} from "../../requestMethods";
+import {Link} from "react-router-dom";
 
 
 const KEY = process.env.REACT_APP_STRIPE;
@@ -191,13 +192,14 @@ const Cart = () => {
         stripeToken && makeRequest();
     }, [stripeToken, cart.total, history]);
 
+
     return (
         <Container>
             <Announcement />
             <Wrapper>
                 <Title>YOUR BAG</Title>
                 <Top>
-                    <TopButton>CONTINUE SHOPPING</TopButton>
+                    <Link to={"/products"}><TopButton>CONTINUE SHOPPING</TopButton></Link>
                     <TopTexts>
                         <TopText>Shopping Bag</TopText>
                         <TopText>Your Wishlist</TopText>
@@ -225,9 +227,7 @@ const Cart = () => {
                                 </ProductDetail>
                                 <PriceDetail>
                                     <ProductAmountContainer>
-                                        <Add />
-                                        <ProductAmount>{product.quantity}</ProductAmount>
-                                        <Remove />
+                                        <ProductAmount>Amount: {product.quantity}</ProductAmount>
                                     </ProductAmountContainer>
                                     <ProductPrice>
                                         $ {product.price * product.quantity}
@@ -239,18 +239,6 @@ const Cart = () => {
                     </Info>
                     <Summary>
                         <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-                        <SummaryItem>
-                            <SummaryItemText>Subtotal</SummaryItemText>
-                            <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
-                        </SummaryItem>
-                        <SummaryItem>
-                            <SummaryItemText>Estimated Shipping</SummaryItemText>
-                            <SummaryItemPrice>$ 5.90</SummaryItemPrice>
-                        </SummaryItem>
-                        <SummaryItem>
-                            <SummaryItemText>Shipping Discount</SummaryItemText>
-                            <SummaryItemPrice>$ -5.90</SummaryItemPrice>
-                        </SummaryItem>
                         <SummaryItem type="total">
                             <SummaryItemText>Total</SummaryItemText>
                             <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
