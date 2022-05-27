@@ -179,6 +179,7 @@ const Cart = () => {
     useEffect(() => {
         const makeRequest = async () => {
             try {
+                console.log(localStorage.getItem("token"))
                 const res = await userRequest(localStorage.getItem("token")).post("/checkout/payment", {
                     tokenId: stripeToken.id,
                     amount: cart.total * 100,

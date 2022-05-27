@@ -30,7 +30,8 @@ export const login =  (email, password) => {
             })
             dispatch(setUser(response.data))
             console.log(response.data)
-            localStorage.setItem('token', response.data.token)
+            console.log(response.data.accessToken)
+            localStorage.setItem('token', response.data.accessToken)
         } catch (e) {
             alert(e.response.data.message)
         }
@@ -44,7 +45,7 @@ export const auth =  () => {
                 {headers:{Authorization:`Bearer ${localStorage.getItem('token')}`}}
             )
             dispatch(setUser(response.data.user))
-            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('token', response.data.accessToken)
         } catch (e) {
             alert(e.response.data.message)
             localStorage.removeItem('token')
