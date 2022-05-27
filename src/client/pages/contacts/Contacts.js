@@ -5,11 +5,10 @@ import {useJsApiLoader} from "@react-google-maps/api";
 
 
 
-
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import styled from "styled-components";
-
+import Form from "./Form";
 
 const  API_KEY= process.env["REACT_APP_API_KEY"]
 const defaultCenter = {
@@ -605,6 +604,8 @@ const Styles = styled.div `
   }
 `
 const Contacts =() =>{
+
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: API_KEY
@@ -671,78 +672,7 @@ const Contacts =() =>{
             </div>
         </div>
 </div>
-
-<div class="container">
-    <div class="content">
-        <div class="left-side">
-            <div class="address details">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="topic">Address</div>
-                <div class="text-one">Minsk</div>
-                <div class="text-two">Expobel, Dana Moll, Green City, Gallery</div>
-            </div>
-            <div class="phone details">
-                <i class="fas fa-phone-alt"></i>
-                <div class="topic">Phone number</div>
-                <div class="text-one">+375292564221</div>
-                <div class="text-two">+375295258365</div>
-            </div>
-            <div class="email details">
-                <i class="fas fa-envelope"></i>
-                <div class="topic">Email</div>
-                <div class="text-one">support@site.com</div>
-                <div class="text-two">admin@site.com</div>
-            </div>
-        </div>
-        <div class="right-side">
-            <div class="topic-text">Send us your message</div>
-            <p>
-                If you have any questions or cooperation offers:
-                fill in the form below
-            </p>
-            <form action="send_mail.php" name="form" method="post">
-                <div class="input-box">
-                    <input
-                        type="text"
-                        placeholder="Your name"
-                        name="name"
-                        id="name"
-                        data-reg="^[А-ЯЁ][а-яё]*$"
-                    />
-                    <label for="name">Сyrillic only</label>
-                </div>
-                <div class="input-box">
-                    <input
-                        type="text"
-                        placeholder="Input email"
-                        name="email"
-                        id="email"
-                        data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
-                    />
-                    <label for="email">Format: name@mail.ru</label>
-                </div>
-                <div class="input-box">
-                    <input
-                        type="text"
-                        placeholder="Input phone number"
-                        name="phone"
-                        id="phone"
-                        data-reg="^((\+375)+([0-9]){12})$"  /*change!!!!!!!!!!*/
-                    />
-                    <label for="phone">Format: 375290000000 or 3753300000000</label>
-                </div>
-                <div class="input-box message-box">
-                    <textarea placeholder="Message"  name="message"></textarea>
-                </div>
-                <div class="button">
-                    <input type="submit" id="button" value="Send" />
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<script src="app.js"/>
-
+<Form/>
       <div className="Contacts">{isLoaded ?
           <Map center={defaultCenter}/>:<h2>Not avalible</h2>}
       </div></Styles>

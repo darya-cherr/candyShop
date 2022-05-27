@@ -4,7 +4,6 @@ const validFormArr = [];
 const button = form.elements["button"];
 
 
-console.log("HELLO")
 
 formArr.forEach((el) => {
   if (el.hasAttribute("data-reg")) {
