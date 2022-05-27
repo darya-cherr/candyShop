@@ -61,10 +61,10 @@ router.post('/login',
             if (!isPassValid) {
                 return res.status(400).json({message: "Invalid password"})
             }
-            const token = jwt.sign({id: user.id, isAdmin: user.isAdmin}, config.get("JWT_SEC"), {expiresIn: "3d"})
+            const accessToken = jwt.sign({id: user.id, isAdmin: user.isAdmin}, config.get("JWT_SEC"), {expiresIn: "3d"})
 
             const {pass, ...others} = user._doc;
-            return res.status(200).json({...others, token});
+            return res.status(200).json({...others, accessToken});
         } catch (e) {
             console.log(e)
             res.status(500).send({message: "Server error"})
