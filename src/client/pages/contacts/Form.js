@@ -31,7 +31,7 @@ return(
                 If you have any questions or cooperation offers:
                 fill in the form below
             </p>
-            <form action='send_mail.php' name='form' method="post">
+            <form  name='form' method="post" action='send_mail.php'>
                 <div class="input-box">
                     <input
                         type="text"
@@ -60,13 +60,13 @@ return(
                         id="phone"
                         data-reg="^((\+7|7|8)+([0-9]){10})$"  /*change!!!!!!!!!!*/
                     />
-                    <label for="phone">Format: 375290000000 or 3753300000000</label>
+                    <label for="phone">Format: 80290000000 or 803300000000</label>
                 </div>
                 <div class="input-box message-box">
                     <textarea placeholder="Message"  name="message"></textarea>
                 </div>
                 <div class="button">
-                    <input type="submit" id="button" value="Send" />
+                    <input type="submit" id="button" value="Send" onClick={"./send_mail.php"}/>
                 </div>
             </form>
         </div>
