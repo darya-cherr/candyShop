@@ -44,7 +44,7 @@ const Success = () => {
     useEffect(() => {
         const createOrder = async () => {
             try {
-                const res = await userRequest(currentUser.token).post("/orders", {
+                const res = await userRequest(localStorage.getItem('token')).post("/orders", {
                     userId: currentUser._id,
                     products: cart.products.map((item) => ({
                         productId: item._id,

@@ -1,7 +1,33 @@
+import {useState} from "react";
 
 
 const Form=()=>{
+
+
+
     import('./app.js')
+
+    const [status, setStatus] = useState("Submit");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus("Sending...");
+        const { name, email, message } = e.target.elements;
+        let details = {
+            name: name.value,
+            email: email.value,
+            message: message.value,
+        };
+        let response = await fetch("http://localhost:5000/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(details),
+        });
+        setStatus("Submit");
+        let result = await response.json();
+        alert(result.status);
+    };
 return(
 <div class="container">
     <div class="content">
@@ -31,7 +57,7 @@ return(
                 If you have any questions or cooperation offers:
                 fill in the form below
             </p>
-            <form  name='form' method="post" action='send_mail.php'>
+            <form  name='form' onSubmit={handleSubmit}>
                 <div class="input-box">
                     <input
                         type="text"
@@ -65,8 +91,8 @@ return(
                 <div class="input-box message-box">
                     <textarea placeholder="Message"  name="message"></textarea>
                 </div>
-                <div class="button">
-                    <input type="submit" id="button" value="Send" onClick={"./send_mail.php"}/>
+                <div class="button" >
+                    <button type="submit" id="button">{status}</button>
                 </div>
             </form>
         </div>

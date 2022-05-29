@@ -12,6 +12,7 @@ const corsMiddleware = require('./middleware/cors.middleware')
 const cors = require("cors");
 const stripeRoute = require("./routes/stripe");
 
+const contactRoute = require("./routes/contactRoute");
 
 app.use(cors());
 app.use(corsMiddleware)
@@ -22,6 +23,7 @@ app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/checkout", stripeRoute);
+app.use("/api/contact", contactRoute);
 
 const start = async () => {
     try {
