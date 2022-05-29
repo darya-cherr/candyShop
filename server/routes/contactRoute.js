@@ -19,7 +19,7 @@ contactEmail.verify((error) => {
   }
 });
 
-router.post("/contact", (req, res) => {
+router.post("/", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
@@ -37,3 +37,4 @@ router.post("/contact", (req, res) => {
     }
   });
 });
+module.exports = router;

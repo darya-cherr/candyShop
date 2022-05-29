@@ -47,31 +47,14 @@ function formCheck(e) {
     alert("Заполните поля правильно!");
     return;
   }
-  formSubmit();
 }
 
-async function formSubmit() {
-  const data = serializeForm(form);
-  const response = await sendData(data);
-  if (response.ok) {
-    let result = await response.json();
-    alert(result.message);
-    formReset();
-  } else {
-    alert("Код ошибки: " + response.status);
-  }
-}
 
 function serializeForm(formNode) {
   return new FormData(form);
 }
 
-async function sendData(data) {
-  return await fetch("send_mail.php", {
-    method: "POST",
-    body: data,
-  });
-}
+
 
 function formReset() {
   form.reset();

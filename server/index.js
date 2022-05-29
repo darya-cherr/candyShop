@@ -11,8 +11,8 @@ const orderRoute = require("./routes/order");
 const corsMiddleware = require('./middleware/cors.middleware')
 const cors = require("cors");
 const stripeRoute = require("./routes/stripe");
-
 const contactRoute = require("./routes/contactRoute");
+
 
 app.use(cors());
 app.use(corsMiddleware)
