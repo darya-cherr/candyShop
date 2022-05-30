@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import {useEffect, useState} from "react";
-import axios from "axios";
 import {useSelector} from "react-redux";
-import Announcement from "./Announcement";
-import {Link} from "react-router-dom";
-import StripeCheckout from "react-stripe-checkout";
+import {userRequest} from "../../requestMethods";
 
 
 const Container = styled.div`
@@ -96,7 +93,11 @@ const Orders = () => {
     useEffect(() => {
         const getOrders = async () => {
             try {
-
+                const res = await userRequest(localStorage.getItem('token')).post(
+                    `/orders/find/${currentUser._id}`
+                );
+                setOrders(res.data);
+                console.log(res.data);
             } catch (err) {}
         };
         getOrders();
